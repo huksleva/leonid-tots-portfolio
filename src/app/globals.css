@@ -20,3 +20,16 @@
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  [style*="animation"] {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid #a1a1aa;
+  outline-offset: 3px;
+  border-radius: 4px;
+}

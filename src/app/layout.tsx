@@ -13,10 +13,48 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://huksleva.github.io";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Leonid Tots — Backend Developer",
   description:
-    "Portfolio of Leonid Tots, a backend developer specializing in Python and web technologies.",
+    "Portfolio of Leonid Tots, a backend developer specializing in Python, FastAPI, and REST APIs. Open to junior positions and internships.",
+  authors: [{ name: "Leonid Tots" }],
+  keywords: [
+    "backend developer",
+    "Python",
+    "FastAPI",
+    "PostgreSQL",
+    "junior developer",
+    "portfolio",
+  ],
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: "Leonid Tots — Backend Developer",
+    description:
+      "Portfolio of Leonid Tots, a backend developer specializing in Python, FastAPI, and REST APIs.",
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+  },
+  twitter: {
+    card: "summary",
+    title: "Leonid Tots — Backend Developer",
+    description:
+      "Portfolio of Leonid Tots, a backend developer specializing in Python, FastAPI, and REST APIs.",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Leonid Tots",
+  jobTitle: "Backend Developer",
+  url: siteUrl,
+  email: "leonid005xc@gmail.com",
+  sameAs: ["https://github.com/huksleva"],
+  knowsAbout: ["Python", "FastAPI", "PostgreSQL", "REST APIs", "Docker", "Git"],
 };
 
 export default function RootLayout({
@@ -30,8 +68,20 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-zinc-950 text-zinc-100">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <a
+          href="#main-content"
+          className="sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:top-4 focus-visible:left-4 focus-visible:z-[100] focus-visible:rounded-lg focus-visible:bg-zinc-100 focus-visible:px-4 focus-visible:py-2 focus-visible:text-sm focus-visible:font-medium focus-visible:text-zinc-900"
+        >
+          Skip to main content
+        </a>
         <Navbar />
-        <div className="pt-16">{children}</div>
+        <div className="pt-16">
+          {children}
+        </div>
       </body>
     </html>
   );
