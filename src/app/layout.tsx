@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 
@@ -86,8 +85,7 @@ export default function RootLayout({
             >
               Skip to main content
             </a>
-            <Navbar />
-            <div className="pt-16">{children}</div>
+            {children}
           </ThemeProvider>
         </LanguageProvider>
       </body>
