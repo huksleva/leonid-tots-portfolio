@@ -1,8 +1,11 @@
+"use client";
+
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import { useLang } from "@/contexts/LanguageContext";
 
 type Project = {
   name: string;
-  description: string;
+  descKey: "d1" | "d2" | "d3";
   tags: string[];
   github: string;
   featured?: boolean;
@@ -11,35 +14,35 @@ type Project = {
 const projects: Project[] = [
   {
     name: "Tramplin — AI Career Platform",
-    description:
-      "Career platform for students and employers with role-based access, AI-assisted job descriptions and cover letters, two-tier moderation, and interactive opportunity mapping via Yandex Maps API. Built as a team at IF...ELSE 2026 hackathon — 2nd place.",
+    descKey: "d1",
     tags: ["Python", "FastAPI", "PostgreSQL", "SQLAlchemy", "Docker", "CI/CD", "JavaScript", "Vite"],
     github: "https://github.com/NerdySnake6/Tramplin-ai-career-platform",
     featured: true,
   },
   {
     name: "Epidemic Spread Simulation",
-    description:
-      "A cellular automaton model of infectious disease spread across a 2D grid population. Supports multiple virus profiles (COVID-19, Flu, Measles), real-time statistics visualization, interactive controls, and manual outbreak placement.",
+    descKey: "d2",
     tags: ["Python", "NumPy", "Matplotlib", "Simulation"],
     github: "https://github.com/huksleva/Coursework_computer_simulation",
   },
   {
     name: "Solar System Visualization",
-    description:
-      "Physics-based simulation of planetary orbits using real NASA data. Adapts to screen resolution, includes speed controls, pause/resume, and orbital path toggling. Built with Python's built-in turtle graphics library.",
+    descKey: "d3",
     tags: ["Python", "turtle", "pywin32"],
     github: "https://github.com/huksleva/SolarSystemPyTurtle",
   },
 ];
 
 export default function Projects() {
+  const { tr } = useLang();
+  const p = tr.projects;
+
   return (
     <section id="projects" className="px-6 py-24">
       <div className="mx-auto max-w-4xl">
         <AnimateOnScroll>
           <h2 className="mb-12 text-sm font-mono tracking-widest text-zinc-500 uppercase">
-            Projects
+            {p.title}
           </h2>
         </AnimateOnScroll>
         <div className="space-y-6">
@@ -48,10 +51,10 @@ export default function Projects() {
               <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-6 transition-colors hover:border-zinc-700">
                 <div className="mb-3 flex items-start justify-between gap-4">
                   <div className="flex items-center gap-3">
-                    <h3 className="font-semibold text-zinc-100">{project.name}</h3>
+                    <h3 translate="no" className="font-semibold text-zinc-100">{project.name}</h3>
                     {project.featured && (
                       <span className="rounded-full bg-zinc-700 px-2.5 py-0.5 text-xs text-zinc-300">
-                        Hackathon · 2nd place
+                        {p.badge}
                       </span>
                     )}
                   </div>
@@ -65,7 +68,7 @@ export default function Projects() {
                   </a>
                 </div>
                 <p className="mb-4 text-sm leading-relaxed text-zinc-400">
-                  {project.description}
+                  {p[project.descKey]}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (

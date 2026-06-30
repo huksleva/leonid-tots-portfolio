@@ -1,10 +1,18 @@
+"use client";
+
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import { useLang } from "@/contexts/LanguageContext";
 
 const links = [
   {
     label: "Email",
     value: "leonid005xc@gmail.com",
     href: "mailto:leonid005xc@gmail.com",
+  },
+  {
+    label: "Telegram",
+    value: "@pots135",
+    href: "https://t.me/pots135",
   },
   {
     label: "GitHub",
@@ -14,18 +22,19 @@ const links = [
 ];
 
 export default function Contact() {
+  const { tr } = useLang();
+  const c = tr.contact;
+
   return (
     <section id="contacts" className="px-6 py-24">
       <div className="mx-auto max-w-4xl">
         <AnimateOnScroll>
           <h2 className="mb-4 text-sm font-mono tracking-widest text-zinc-500 uppercase">
-            Contact
+            {c.title}
           </h2>
         </AnimateOnScroll>
         <AnimateOnScroll delay={100}>
-          <p className="mb-12 text-zinc-400">
-            Open to junior positions and internships. Feel free to reach out.
-          </p>
+          <p className="mb-12 text-zinc-400">{c.description}</p>
         </AnimateOnScroll>
         <div className="flex flex-col gap-4 sm:flex-row">
           {links.map(({ label, value, href }, i) => (

@@ -1,19 +1,21 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contacts" },
-];
+import { useLang } from "@/contexts/LanguageContext";
 
 export default function Navbar() {
+  const { lang, toggle, tr } = useLang();
   const [activeSection, setActiveSection] = useState<string>("");
 
+  const navLinks = [
+    { label: tr.nav.about, href: "#about" },
+    { label: tr.nav.skills, href: "#skills" },
+    { label: tr.nav.projects, href: "#projects" },
+    { label: tr.nav.contact, href: "#contacts" },
+  ];
+
   useEffect(() => {
-    const sectionIds = navLinks.map((l) => l.href.slice(1));
+    const sectionIds = ["about", "skills", "projects", "contacts"];
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -44,26 +46,35 @@ export default function Navbar() {
         >
           Leonid Tots
         </a>
-        <ul className="flex items-center gap-6">
-          {navLinks.map(({ label, href }) => {
-            const isActive = activeSection === href.slice(1);
-            return (
-              <li key={label}>
-                <a
-                  href={href}
-                  aria-current={isActive ? "true" : undefined}
-                  className={`text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:rounded ${
-                    isActive
-                      ? "text-zinc-100"
-                      : "text-zinc-500 hover:text-zinc-300"
-                  }`}
-                >
-                  {label}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
+        <div className="flex items-center gap-6">
+          <ul className="flex items-center gap-6">
+            {navLinks.map(({ label, href }) => {
+              const isActive = activeSection === href.slice(1);
+              return (
+                <li key={href}>
+                  <a
+                    href={href}
+                    aria-current={isActive ? "true" : undefined}
+                    className={`text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:rounded ${
+                      isActive
+                        ? "text-zinc-100"
+                        : "text-zinc-500 hover:text-zinc-300"
+                    }`}
+                  >
+                    {label}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+          <button
+            onClick={toggle}
+            aria-label={lang === "en" ? "Switch to Russian" : "Switch to English"}
+            className="rounded-md border border-zinc-700 px-2.5 py-1 text-xs font-mono text-zinc-400 transition-colors hover:border-zinc-500 hover:text-zinc-200"
+          >
+            {lang === "en" ? "RU" : "EN"}
+          </button>
+        </div>
       </nav>
     </header>
   );

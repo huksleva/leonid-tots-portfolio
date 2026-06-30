@@ -1,0 +1,106 @@
+export type Lang = "en" | "ru";
+
+export const t = {
+  en: {
+    nav: {
+      about: "About",
+      skills: "Skills",
+      projects: "Projects",
+      contact: "Contact",
+    },
+    hero: {
+      greeting: "Hi, I'm",
+      role: "Backend Developer",
+      description:
+        "I build reliable server-side applications and APIs using Python. Currently learning the full stack — React, Next.js, and TypeScript.",
+      cta: "View Projects",
+      ctaSecondary: "Contact Me",
+    },
+    about: {
+      title: "About",
+      p1: "I'm a developer focused on backend systems. I write Python — building APIs, automating tasks, and working with data. I care about code that is readable, maintainable, and does exactly what it should.",
+      p2: "I'm currently expanding into full-stack development: learning React, Next.js, and TypeScript to understand how the whole system fits together — not just the server side.",
+      p3: "This portfolio is part of that learning process. Every component here is something I built and understand.",
+      labelLocation: "Location",
+      labelFocus: "Focus",
+      labelStatus: "Status",
+      labelLanguages: "Languages",
+      valueLocation: "Ukraine",
+      valueFocus: "Backend Development",
+      valueStatus: "Open to opportunities",
+      valueLanguages: "Ukrainian, English (B2)",
+    },
+    skills: {
+      title: "Skills",
+      comfortable: "Comfortable",
+      learning: "Learning",
+      languages: "Languages",
+      backend: "Backend",
+      databases: "Databases",
+      frontend: "Frontend",
+      infrastructure: "Infrastructure & Tools",
+    },
+    projects: {
+      title: "Projects",
+      badge: "Hackathon · 2nd place",
+      d1: "Career platform for students and employers with role-based access, AI-assisted job descriptions and cover letters, two-tier moderation, and interactive opportunity mapping via Yandex Maps API. Built as a team at IF...ELSE 2026 hackathon — 2nd place.",
+      d2: "A cellular automaton model of infectious disease spread across a 2D grid population. Supports multiple virus profiles (COVID-19, Flu, Measles), real-time statistics visualization, interactive controls, and manual outbreak placement.",
+      d3: "Physics-based simulation of planetary orbits using real NASA data. Adapts to screen resolution, includes speed controls, pause/resume, and orbital path toggling. Built with Python's built-in turtle graphics library.",
+    },
+    contact: {
+      title: "Contact",
+      description: "Open to junior positions and internships. Feel free to reach out.",
+    },
+  },
+  ru: {
+    nav: {
+      about: "О себе",
+      skills: "Навыки",
+      projects: "Проекты",
+      contact: "Контакт",
+    },
+    hero: {
+      greeting: "Привет, я",
+      role: "Бэкенд-разработчик",
+      description:
+        "Создаю надёжные серверные приложения и API на Python. Сейчас изучаю фулстек — React, Next.js и TypeScript.",
+      cta: "Мои проекты",
+      ctaSecondary: "Написать",
+    },
+    about: {
+      title: "О себе",
+      p1: "Я разработчик, сфокусированный на серверной части. Пишу на Python — создаю API, автоматизирую задачи, работаю с данными. Ценю код, который легко читать, поддерживать и который делает именно то, что должен.",
+      p2: "Сейчас расширяю навыки в сторону фулстека: изучаю React, Next.js и TypeScript, чтобы понять, как вся система работает вместе — не только серверная часть.",
+      p3: "Это портфолио — часть процесса обучения. Каждый компонент здесь я написал и понимаю.",
+      labelLocation: "Местоположение",
+      labelFocus: "Направление",
+      labelStatus: "Статус",
+      labelLanguages: "Языки",
+      valueLocation: "Украина",
+      valueFocus: "Бэкенд-разработка",
+      valueStatus: "В поиске работы",
+      valueLanguages: "Украинский, Английский (B2)",
+    },
+    skills: {
+      title: "Навыки",
+      comfortable: "Уверенно",
+      learning: "Изучаю",
+      languages: "Языки",
+      backend: "Бэкенд",
+      databases: "Базы данных",
+      frontend: "Фронтенд",
+      infrastructure: "Инфраструктура",
+    },
+    projects: {
+      title: "Проекты",
+      badge: "Хакатон · 2-е место",
+      d1: "Платформа для студентов и работодателей с ролевым доступом, AI-помощью при написании вакансий и сопроводительных писем, двухуровневой модерацией и картой возможностей через API Яндекс.Карт. Создано в команде на хакатоне IF...ELSE 2026 — 2-е место.",
+      d2: "Модель клеточного автомата для распространения инфекционных болезней на двумерной сетке. Поддерживает несколько вирусных профилей (COVID-19, грипп, корь), визуализацию статистики в реальном времени, интерактивное управление и ручное размещение вспышек.",
+      d3: "Физически обоснованная симуляция орбитального движения планет с использованием реальных данных NASA. Адаптируется к разрешению экрана, включает управление скоростью, паузу и переключение отображения орбит. Создано с использованием встроенной библиотеки Python turtle.",
+    },
+    contact: {
+      title: "Контакт",
+      description: "Открыт к предложениям о работе на позицию Junior. Пишите.",
+    },
+  },
+} as const;

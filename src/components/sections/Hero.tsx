@@ -1,4 +1,10 @@
+"use client";
+
+import { useLang } from "@/contexts/LanguageContext";
+
 export default function Hero() {
+  const { tr } = useLang();
+
   return (
     <section
       id="hero"
@@ -8,7 +14,7 @@ export default function Hero() {
         className="mb-3 font-mono text-sm tracking-widest text-zinc-400 uppercase"
         style={{ animation: "fadeIn 0.6s ease both" }}
       >
-        Hi, I&apos;m
+        {tr.hero.greeting}
       </p>
       <h1
         translate="no"
@@ -21,14 +27,13 @@ export default function Hero() {
         className="mb-6 text-xl font-medium text-zinc-400 sm:text-2xl"
         style={{ animation: "fadeUp 0.6s ease 0.3s both" }}
       >
-        Backend Developer
+        {tr.hero.role}
       </h2>
       <p
         className="max-w-xl text-base leading-relaxed text-zinc-500"
         style={{ animation: "fadeUp 0.6s ease 0.45s both" }}
       >
-        I build reliable server-side applications and APIs using Python. Currently
-        learning the full stack — React, Next.js, and TypeScript.
+        {tr.hero.description}
       </p>
       <div
         className="mt-10 flex gap-4"
@@ -38,13 +43,13 @@ export default function Hero() {
           href="#projects"
           className="rounded-lg bg-zinc-100 px-5 py-2.5 text-sm font-medium text-zinc-900 transition-colors hover:bg-white"
         >
-          View Projects
+          {tr.hero.cta}
         </a>
         <a
           href="#contacts"
           className="rounded-lg border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:border-zinc-500 hover:text-zinc-100"
         >
-          Contact Me
+          {tr.hero.ctaSecondary}
         </a>
       </div>
     </section>

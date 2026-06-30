@@ -1,18 +1,13 @@
+"use client";
+
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import { useLang } from "@/contexts/LanguageContext";
 
-type Skill = {
-  name: string;
-  learning?: boolean;
-};
+type Skill = { name: string; learning?: boolean };
 
-type SkillGroup = {
-  category: string;
-  skills: Skill[];
-};
-
-const groups: SkillGroup[] = [
+const skillGroups: { key: keyof ReturnType<typeof useLang>["tr"]["skills"]; skills: Skill[] }[] = [
   {
-    category: "Languages",
+    key: "languages",
     skills: [
       { name: "Python" },
       { name: "JavaScript" },
@@ -22,7 +17,7 @@ const groups: SkillGroup[] = [
     ],
   },
   {
-    category: "Backend",
+    key: "backend",
     skills: [
       { name: "FastAPI" },
       { name: "Flask" },
@@ -32,7 +27,7 @@ const groups: SkillGroup[] = [
     ],
   },
   {
-    category: "Databases",
+    key: "databases",
     skills: [
       { name: "PostgreSQL" },
       { name: "MongoDB" },
@@ -40,7 +35,7 @@ const groups: SkillGroup[] = [
     ],
   },
   {
-    category: "Frontend",
+    key: "frontend",
     skills: [
       { name: "HTML5" },
       { name: "CSS3" },
@@ -51,7 +46,7 @@ const groups: SkillGroup[] = [
     ],
   },
   {
-    category: "Infrastructure & Tools",
+    key: "infrastructure",
     skills: [
       { name: "Docker" },
       { name: "Git" },
@@ -61,32 +56,35 @@ const groups: SkillGroup[] = [
 ];
 
 export default function Skills() {
+  const { tr } = useLang();
+  const s = tr.skills;
+
   return (
     <section id="skills" className="px-6 py-24">
       <div className="mx-auto max-w-4xl">
         <AnimateOnScroll>
           <div className="mb-12 flex items-baseline justify-between">
             <h2 className="text-sm font-mono tracking-widest text-zinc-500 uppercase">
-              Skills
+              {s.title}
             </h2>
             <div className="flex items-center gap-4 text-xs text-zinc-600">
               <span className="flex items-center gap-1.5">
                 <span className="inline-block h-2 w-2 rounded-full bg-zinc-300" />
-                Comfortable
+                {s.comfortable}
               </span>
               <span className="flex items-center gap-1.5">
                 <span className="inline-block h-2 w-2 rounded-full border border-zinc-600" />
-                Learning
+                {s.learning}
               </span>
             </div>
           </div>
         </AnimateOnScroll>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {groups.map(({ category, skills }, i) => (
-            <AnimateOnScroll key={category} delay={i * 80}>
+          {skillGroups.map(({ key, skills }, i) => (
+            <AnimateOnScroll key={key} delay={i * 80}>
               <div>
                 <p className="mb-3 text-xs text-zinc-600 uppercase tracking-wider">
-                  {category}
+                  {s[key] as string}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {skills.map(({ name, learning }) => (
