@@ -18,32 +18,42 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://leonid-tots-portfol
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Leonid Tots — Backend Developer",
+  title: "Leonid Tots — Backend Developer | Леонид Тоц",
   description:
-    "Portfolio of Leonid Tots, a backend developer specializing in Python, FastAPI, and REST APIs. Open to junior positions and internships.",
+    "Portfolio of Leonid Tots (Леонид Тоц) — backend developer specializing in Python, FastAPI, and PostgreSQL. Open to junior positions and internships.",
   authors: [{ name: "Leonid Tots" }],
   keywords: [
+    "Leonid Tots",
+    "Леонид Тоц",
+    "Тоц Леонид",
     "backend developer",
+    "бэкенд разработчик",
     "Python",
     "FastAPI",
     "PostgreSQL",
     "junior developer",
+    "портфолио разработчика",
     "portfolio",
   ],
+  alternates: {
+    canonical: siteUrl,
+  },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Leonid Tots — Backend Developer",
+    title: "Leonid Tots — Backend Developer | Леонид Тоц",
     description:
-      "Portfolio of Leonid Tots, a backend developer specializing in Python, FastAPI, and REST APIs.",
+      "Portfolio of Leonid Tots (Леонид Тоц) — backend developer specializing in Python, FastAPI, and PostgreSQL.",
     type: "website",
     locale: "en_US",
+    alternateLocale: "ru_RU",
     url: siteUrl,
+    siteName: "Leonid Tots Portfolio",
   },
   twitter: {
     card: "summary",
-    title: "Leonid Tots — Backend Developer",
+    title: "Leonid Tots — Backend Developer | Леонид Тоц",
     description:
-      "Portfolio of Leonid Tots, a backend developer specializing in Python, FastAPI, and REST APIs.",
+      "Portfolio of Leonid Tots (Леонид Тоц) — backend developer specializing in Python, FastAPI, and PostgreSQL.",
   },
 };
 
@@ -51,11 +61,16 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Leonid Tots",
+  alternateName: ["Леонид Тоц", "Тоц Леонид"],
   jobTitle: "Backend Developer",
   url: siteUrl,
   email: "leonid005xc@gmail.com",
-  sameAs: ["https://github.com/huksleva"],
+  sameAs: [
+    "https://github.com/huksleva",
+    "https://t.me/pots135",
+  ],
   knowsAbout: ["Python", "FastAPI", "PostgreSQL", "REST APIs", "Docker", "Git"],
+  nationality: "Russian",
 };
 
 export default function RootLayout({
