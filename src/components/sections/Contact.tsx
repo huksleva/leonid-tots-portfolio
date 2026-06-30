@@ -36,14 +36,14 @@ export default function Contact() {
         <AnimateOnScroll delay={100}>
           <p className="mb-12 text-zinc-600 dark:text-zinc-400">{c.description}</p>
         </AnimateOnScroll>
-        <div className="flex flex-col gap-4 sm:flex-row">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           {links.map(({ label, value, href }, i) => (
-            <AnimateOnScroll key={label} delay={200 + i * 100}>
+            <AnimateOnScroll key={label} delay={200 + i * 100} className="flex flex-col">
               <a
                 href={href}
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="group flex flex-col gap-1 rounded-xl border border-zinc-200 bg-zinc-50/80 px-6 py-5 transition-colors hover:border-zinc-400 dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:border-zinc-600"
+                className="group flex flex-1 flex-col gap-1 rounded-xl border border-zinc-200 bg-zinc-50/80 px-6 py-5 transition-colors hover:border-zinc-400 dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:border-zinc-600"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-zinc-400 uppercase tracking-wider dark:text-zinc-600">

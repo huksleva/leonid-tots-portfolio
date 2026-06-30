@@ -47,6 +47,7 @@ export const t = {
     projects: {
       title: "Projects",
       badge: "Hackathon · 2nd place",
+      noPreview: "Preview not yet added",
       d1: "Career platform for students and employers with role-based access, AI-assisted job descriptions and cover letters, two-tier moderation, and interactive opportunity mapping via Yandex Maps API. Built as a team at IF...ELSE 2026 hackathon — 2nd place.",
       d2: "A cellular automaton model of infectious disease spread across a 2D grid population. Supports multiple virus profiles (COVID-19, Flu, Measles), real-time statistics visualization, interactive controls, and manual outbreak placement.",
       d3: "Physics-based simulation of planetary orbits using real NASA data. Adapts to screen resolution, includes speed controls, pause/resume, and orbital path toggling. Built with Python's built-in turtle graphics library.",
@@ -102,6 +103,7 @@ export const t = {
     projects: {
       title: "Проекты",
       badge: "Хакатон · 2-е место",
+      noPreview: "Превью не добавлено",
       d1: "Платформа для студентов и работодателей с ролевым доступом, AI-помощью при написании вакансий и сопроводительных писем, двухуровневой модерацией и картой возможностей через API Яндекс.Карт. Создано в команде на хакатоне IF...ELSE 2026 — 2-е место.",
       d2: "Модель клеточного автомата для распространения инфекционных болезней на двумерной сетке. Поддерживает несколько вирусных профилей (COVID-19, грипп, корь), визуализацию статистики в реальном времени, интерактивное управление и ручное размещение вспышек.",
       d3: "Физически обоснованная симуляция орбитального движения планет с использованием реальных данных NASA. Адаптируется к разрешению экрана, включает управление скоростью, паузу и переключение отображения орбит. Создано с использованием встроенной библиотеки Python turtle.",
