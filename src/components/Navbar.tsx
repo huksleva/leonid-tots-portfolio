@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLang } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
@@ -92,6 +93,12 @@ export default function Navbar() {
               );
             })}
           </ul>
+          <Link
+            href="/lab"
+            className="font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-600 dark:text-zinc-500 dark:hover:text-zinc-300"
+          >
+            / lab
+          </Link>
           <div className="flex items-center gap-2">
             <button
               onClick={toggleTheme}
