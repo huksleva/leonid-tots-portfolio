@@ -13,6 +13,7 @@ const skillGroups: { key: keyof ReturnType<typeof useLang>["tr"]["skills"]; skil
       { name: "JavaScript" },
       { name: "C" },
       { name: "C++" },
+      { name: "C#" },
       { name: "TypeScript", learning: true },
     ],
   },
@@ -67,13 +68,13 @@ export default function Skills() {
             <h2 className="text-sm font-mono tracking-widest text-zinc-500 uppercase">
               {s.title}
             </h2>
-            <div className="flex items-center gap-4 text-xs text-zinc-600">
+            <div className="flex items-center gap-4 text-xs text-zinc-400 dark:text-zinc-600">
               <span className="flex items-center gap-1.5">
-                <span className="inline-block h-2 w-2 rounded-full bg-zinc-300" />
+                <span className="inline-block h-2 w-2 rounded-full bg-zinc-700 dark:bg-zinc-300" />
                 {s.comfortable}
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="inline-block h-2 w-2 rounded-full border border-zinc-600" />
+                <span className="inline-block h-2 w-2 rounded-full border border-zinc-400 dark:border-zinc-600" />
                 {s.learning}
               </span>
             </div>
@@ -83,7 +84,7 @@ export default function Skills() {
           {skillGroups.map(({ key, skills }, i) => (
             <AnimateOnScroll key={key} delay={i * 80}>
               <div>
-                <p className="mb-3 text-xs text-zinc-600 uppercase tracking-wider">
+                <p className="mb-3 text-xs text-zinc-400 dark:text-zinc-600 uppercase tracking-wider">
                   {s[key] as string}
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -92,8 +93,8 @@ export default function Skills() {
                       key={name}
                       className={
                         learning
-                          ? "rounded-md border border-zinc-700 px-3 py-1 text-sm text-zinc-500"
-                          : "rounded-md bg-zinc-800 px-3 py-1 text-sm text-zinc-200"
+                          ? "rounded-md border border-zinc-300 px-3 py-1 text-sm text-zinc-500 dark:border-zinc-700 dark:text-zinc-500"
+                          : "rounded-md bg-zinc-100 px-3 py-1 text-sm text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200"
                       }
                     >
                       {name}

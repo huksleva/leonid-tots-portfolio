@@ -34,7 +34,7 @@ export default function Contact() {
           </h2>
         </AnimateOnScroll>
         <AnimateOnScroll delay={100}>
-          <p className="mb-12 text-zinc-400">{c.description}</p>
+          <p className="mb-12 text-zinc-600 dark:text-zinc-400">{c.description}</p>
         </AnimateOnScroll>
         <div className="flex flex-col gap-4 sm:flex-row">
           {links.map(({ label, value, href }, i) => (
@@ -43,12 +43,12 @@ export default function Contact() {
                 href={href}
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="flex flex-col gap-1 rounded-xl border border-zinc-800 bg-zinc-900/50 px-6 py-5 transition-colors hover:border-zinc-700"
+                className="flex flex-col gap-1 rounded-xl border border-zinc-200 bg-zinc-50/80 px-6 py-5 transition-colors hover:border-zinc-300 dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:border-zinc-700"
               >
-                <span className="text-xs text-zinc-600 uppercase tracking-wider">
+                <span className="text-xs text-zinc-400 uppercase tracking-wider dark:text-zinc-600">
                   {label}
                 </span>
-                <span className="text-sm text-zinc-300">{value}</span>
+                <span className="text-sm text-zinc-700 dark:text-zinc-300">{value}</span>
               </a>
             </AnimateOnScroll>
           ))}

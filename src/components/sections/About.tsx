@@ -24,7 +24,7 @@ export default function About() {
           </h2>
         </AnimateOnScroll>
         <div className="grid gap-12 md:grid-cols-2">
-          <div className="space-y-4 text-zinc-400 leading-relaxed">
+          <div className="space-y-4 leading-relaxed text-zinc-600 dark:text-zinc-400">
             <AnimateOnScroll delay={100}><p>{a.p1}</p></AnimateOnScroll>
             <AnimateOnScroll delay={200}><p>{a.p2}</p></AnimateOnScroll>
             <AnimateOnScroll delay={300}><p>{a.p3}</p></AnimateOnScroll>
@@ -32,9 +32,9 @@ export default function About() {
           <div className="space-y-3">
             {facts.map(({ label, value }, i) => (
               <AnimateOnScroll key={label} delay={100 + i * 80}>
-                <div className="flex items-baseline justify-between border-b border-zinc-800 pb-3">
+                <div className="flex items-baseline justify-between border-b border-zinc-200 pb-3 dark:border-zinc-800">
                   <span className="text-sm text-zinc-500">{label}</span>
-                  <span className="text-sm text-zinc-300">{value}</span>
+                  <span className="text-sm text-zinc-700 dark:text-zinc-300">{value}</span>
                 </div>
               </AnimateOnScroll>
             ))}

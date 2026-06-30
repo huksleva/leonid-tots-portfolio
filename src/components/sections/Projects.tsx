@@ -48,12 +48,14 @@ export default function Projects() {
         <div className="space-y-6">
           {projects.map((project, i) => (
             <AnimateOnScroll key={project.name} delay={i * 120}>
-              <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-6 transition-colors hover:border-zinc-700">
+              <div className="rounded-xl border border-zinc-200 bg-zinc-50/80 p-6 transition-colors hover:border-zinc-300 dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:border-zinc-700">
                 <div className="mb-3 flex items-start justify-between gap-4">
                   <div className="flex items-center gap-3">
-                    <h3 translate="no" className="font-semibold text-zinc-100">{project.name}</h3>
+                    <h3 translate="no" className="font-semibold text-zinc-900 dark:text-zinc-100">
+                      {project.name}
+                    </h3>
                     {project.featured && (
-                      <span className="rounded-full bg-zinc-700 px-2.5 py-0.5 text-xs text-zinc-300">
+                      <span className="rounded-full bg-zinc-200 px-2.5 py-0.5 text-xs text-zinc-700 dark:bg-zinc-700 dark:text-zinc-300">
                         {p.badge}
                       </span>
                     )}
@@ -62,19 +64,19 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="shrink-0 text-xs text-zinc-500 underline underline-offset-2 hover:text-zinc-300"
+                    className="shrink-0 text-xs text-zinc-400 underline underline-offset-2 hover:text-zinc-700 dark:text-zinc-500 dark:hover:text-zinc-300"
                   >
                     GitHub →
                   </a>
                 </div>
-                <p className="mb-4 text-sm leading-relaxed text-zinc-400">
+                <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
                   {p[project.descKey]}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-md bg-zinc-800 px-2.5 py-0.5 text-xs text-zinc-400"
+                      className="rounded-md bg-zinc-100 px-2.5 py-0.5 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400"
                     >
                       {tag}
                     </span>
