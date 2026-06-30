@@ -9,6 +9,7 @@ export default function About() {
 
   const facts = [
     { label: a.labelLocation, value: a.valueLocation },
+    { label: a.labelSpecialty, value: a.valueSpecialty },
     { label: a.labelFocus, value: a.valueFocus },
     { label: a.labelStatus, value: a.valueStatus },
     { label: a.labelLanguages, value: a.valueLanguages },

@@ -41,10 +41,9 @@ export default function Navbar() {
       <nav aria-label="Main navigation" className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
         <a
           href="#hero"
-          translate="no"
           className="text-sm font-semibold text-zinc-100 hover:text-white"
         >
-          Leonid Tots
+          {tr.hero.name}
         </a>
         <div className="flex items-center gap-6">
           <ul className="flex items-center gap-6">

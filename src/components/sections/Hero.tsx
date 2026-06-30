@@ -17,11 +17,10 @@ export default function Hero() {
         {tr.hero.greeting}
       </p>
       <h1
-        translate="no"
         className="mb-4 text-5xl font-bold tracking-tight text-zinc-100 sm:text-6xl"
         style={{ animation: "fadeUp 0.6s ease 0.15s both" }}
       >
-        Leonid Tots
+        {tr.hero.name}
       </h1>
       <h2
         className="mb-6 text-xl font-medium text-zinc-400 sm:text-2xl"
