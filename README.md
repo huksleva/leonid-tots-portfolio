@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# leonid-tots-portfolio
 
-## Getting Started
+Personal portfolio of Leonid Tots — Backend Developer.
 
-First, run the development server:
+**Live:** https://leonid-tots-portfolio.vercel.app
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Stack
+
+- **Next.js 15** (App Router, TypeScript)
+- **React 19**
+- **Tailwind CSS v4** (CSS-first config)
+- **Geist** font (Vercel)
+
+No UI libraries. No animation libraries. Everything is built from scratch.
+
+---
+
+## Features
+
+- EN / RU language switcher (React Context, no routing)
+- Light / dark theme with localStorage persistence and no flash on load
+- Scroll-triggered section animations via `IntersectionObserver`
+- `/lab` — interactive terminal page: each scroll step types a shell command and reveals output
+
+---
+
+## Project structure
+
+```
+src/
+├── app/
+│   ├── (portfolio)/        # Pages with Navbar (route group)
+│   │   ├── layout.tsx
+│   │   └── page.tsx        # Main page: Hero, About, Skills, Projects, Contact
+│   ├── lab/
+│   │   └── page.tsx        # /lab — terminal experience
+│   ├── layout.tsx          # Root layout: fonts, theme script, providers
+│   └── globals.css         # Tailwind import, keyframes, dark variant
+├── components/
+│   ├── Navbar.tsx
+│   ├── sections/           # Hero, About, Skills, Projects, Contact
+│   └── lab/
+│       └── Terminal.tsx    # Snap-scroll terminal with typing animation
+├── contexts/
+│   ├── LanguageContext.tsx
+│   └── ThemeContext.tsx
+└── lib/
+    └── translations.ts     # All UI strings for EN and RU
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Local development
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
+Open [http://localhost:3000](http://localhost:3000).
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technical notes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Theme without flash** — an inline `<script>` in `<head>` applies the saved theme synchronously before the first paint. `suppressHydrationWarning` on `<html>` prevents React hydration errors.
 
-## Deploy on Vercel
+**Route groups** — the `(portfolio)` group adds the `Navbar` only to main-page routes. `/lab` sits outside the group and renders without any chrome.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Terminal animation** — `IntersectionObserver` with `threshold: 0.6` triggers a `setInterval`-based typewriter per section. Output lines appear via `fadeIn` with staggered `animation-delay`. No external dependencies.
