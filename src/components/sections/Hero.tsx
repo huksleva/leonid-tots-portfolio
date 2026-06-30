@@ -35,7 +35,7 @@ export default function Hero() {
         {tr.hero.description}
       </p>
       <div
-        className="mt-10 flex gap-4"
+        className="mt-10 flex flex-wrap justify-center gap-3"
         style={{ animation: "fadeUp 0.6s ease 0.6s both" }}
       >
         <a
@@ -49,6 +49,13 @@ export default function Hero() {
           className="rounded-lg border border-zinc-300 px-5 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-500 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-500 dark:hover:text-zinc-100"
         >
           {tr.hero.ctaSecondary}
+        </a>
+        <a
+          href="/cv.pdf"
+          download
+          className="rounded-lg border border-zinc-300 px-5 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-500 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-500 dark:hover:text-zinc-100"
+        >
+          ↓ {tr.hero.ctaCV}
         </a>
       </div>
     </section>

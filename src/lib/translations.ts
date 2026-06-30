@@ -16,6 +16,7 @@ export const t = {
         "Software Development student focused on backend engineering. I build APIs and server-side systems using Python, FastAPI, and PostgreSQL.",
       cta: "View Projects",
       ctaSecondary: "Contact Me",
+      ctaCV: "Download CV",
     },
     about: {
       title: "About",
@@ -70,6 +71,7 @@ export const t = {
         "Студент специальности «Разработка ПО», специализируюсь на серверной разработке. Создаю API и серверные системы на Python, FastAPI и PostgreSQL.",
       cta: "Мои проекты",
       ctaSecondary: "Написать",
+      ctaCV: "Скачать резюме",
     },
     about: {
       title: "Обо мне",

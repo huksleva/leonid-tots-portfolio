@@ -64,9 +64,9 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="shrink-0 text-xs text-zinc-400 underline underline-offset-2 hover:text-zinc-700 dark:text-zinc-500 dark:hover:text-zinc-300"
+                    className="shrink-0 rounded-md border border-zinc-200 px-3 py-1 text-xs font-medium text-zinc-500 transition-colors hover:border-zinc-400 hover:text-zinc-800 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-zinc-500 dark:hover:text-zinc-200"
                   >
-                    GitHub →
+                    GitHub ↗
                   </a>
                 </div>
                 <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">

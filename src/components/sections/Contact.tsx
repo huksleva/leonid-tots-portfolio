@@ -43,11 +43,16 @@ export default function Contact() {
                 href={href}
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="flex flex-col gap-1 rounded-xl border border-zinc-200 bg-zinc-50/80 px-6 py-5 transition-colors hover:border-zinc-300 dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:border-zinc-700"
+                className="group flex flex-col gap-1 rounded-xl border border-zinc-200 bg-zinc-50/80 px-6 py-5 transition-colors hover:border-zinc-400 dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:border-zinc-600"
               >
-                <span className="text-xs text-zinc-400 uppercase tracking-wider dark:text-zinc-600">
-                  {label}
-                </span>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-zinc-400 uppercase tracking-wider dark:text-zinc-600">
+                    {label}
+                  </span>
+                  <span className="text-xs text-zinc-300 transition-colors group-hover:text-zinc-500 dark:text-zinc-700 dark:group-hover:text-zinc-400">
+                    ↗
+                  </span>
+                </div>
                 <span className="text-sm text-zinc-700 dark:text-zinc-300">{value}</span>
               </a>
             </AnimateOnScroll>
