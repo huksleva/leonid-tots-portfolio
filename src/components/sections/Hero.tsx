@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="flex min-h-screen flex-col items-center justify-center px-6 text-center"
+      className="flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center px-6 text-center"
     >
       <p className="mb-3 font-mono text-sm tracking-widest text-zinc-400 uppercase">
         Hi, I&apos;m
