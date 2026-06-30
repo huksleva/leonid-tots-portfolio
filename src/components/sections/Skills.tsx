@@ -16,30 +16,47 @@ const groups: SkillGroup[] = [
     skills: [
       { name: "Python" },
       { name: "JavaScript" },
+      { name: "C" },
+      { name: "C++" },
       { name: "TypeScript", learning: true },
     ],
   },
   {
     category: "Backend",
     skills: [
-      { name: "REST APIs" },
-      { name: "FastAPI", learning: true },
-      { name: "PostgreSQL", learning: true },
+      { name: "FastAPI" },
+      { name: "Flask" },
+      { name: "Node.js" },
+      { name: "SQLAlchemy" },
+      { name: "Alembic" },
+    ],
+  },
+  {
+    category: "Databases",
+    skills: [
+      { name: "PostgreSQL" },
+      { name: "MongoDB" },
+      { name: "Elasticsearch" },
     ],
   },
   {
     category: "Frontend",
     skills: [
-      { name: "HTML" },
-      { name: "CSS" },
+      { name: "HTML5" },
+      { name: "CSS3" },
+      { name: "Vite" },
       { name: "React", learning: true },
       { name: "Next.js", learning: true },
       { name: "Tailwind CSS", learning: true },
     ],
   },
   {
-    category: "Tools",
-    skills: [{ name: "Git" }, { name: "Linux" }, { name: "Docker", learning: true }],
+    category: "Infrastructure & Tools",
+    skills: [
+      { name: "Docker" },
+      { name: "Git" },
+      { name: "Yandex Cloud" },
+    ],
   },
 ];
 
@@ -64,9 +81,9 @@ export default function Skills() {
             </div>
           </div>
         </AnimateOnScroll>
-        <div className="grid gap-8 sm:grid-cols-2">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {groups.map(({ category, skills }, i) => (
-            <AnimateOnScroll key={category} delay={i * 100}>
+            <AnimateOnScroll key={category} delay={i * 80}>
               <div>
                 <p className="mb-3 text-xs text-zinc-600 uppercase tracking-wider">
                   {category}
