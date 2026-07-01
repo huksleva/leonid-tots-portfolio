@@ -107,7 +107,6 @@ function TerminalScreen({ data, index }: { data: ScreenData; index: number }) {
   return (
     <section
       ref={ref}
-      style={{ scrollSnapAlign: "start" }}
       className="flex h-screen w-full flex-col justify-center px-8"
     >
       <div className="mx-auto w-full max-w-2xl font-mono text-sm leading-6">
@@ -176,18 +175,12 @@ export default function Terminal() {
         ← portfolio
       </Link>
 
-      <div
-        className="fixed inset-0 overflow-y-scroll bg-[#030712]"
-        style={{ scrollSnapType: "y mandatory" }}
-      >
+      <div className="fixed inset-0 overflow-y-scroll bg-[#030712]">
         {SCREENS.map((screen, i) => (
           <TerminalScreen key={i} data={screen} index={i} />
         ))}
 
-        <section
-          style={{ scrollSnapAlign: "start" }}
-          className="flex h-screen w-full flex-col items-center justify-center"
-        >
+        <section className="flex h-screen w-full flex-col items-center justify-center">
           <div className="text-center font-mono">
             <p className="text-sm">
               <span className="text-emerald-500">~</span>

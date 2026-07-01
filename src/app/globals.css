@@ -76,23 +76,13 @@
   background-position: 200% 0;
 }
 
-/* Custom cursor */
-.js-custom-cursor,
-.js-custom-cursor * {
-  cursor: none !important;
+/* Custom cursor — light theme: dark arrow, dark theme: white arrow */
+html {
+  cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='13' height='21' viewBox='0 0 13 21'><path d='M1 1 L1 17 L5 13 L8 20 L10 19 L7 12 L12 12 Z' fill='rgb(24,24,27)' stroke='white' stroke-width='1.5' stroke-linejoin='round' stroke-linecap='round'/></svg>") 1 1, auto;
 }
 
-.cursor-dot {
-  width: 10px;
-  height: 10px;
-  background: white;
-  mix-blend-mode: difference;
-  transition: width 0.18s ease, height 0.18s ease;
-}
-
-.cursor-dot[data-hover] {
-  width: 22px;
-  height: 22px;
+html.dark {
+  cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='13' height='21' viewBox='0 0 13 21'><path d='M1 1 L1 17 L5 13 L8 20 L10 19 L7 12 L12 12 Z' fill='white' stroke='rgba(0,0,0,0.35)' stroke-width='1.5' stroke-linejoin='round' stroke-linecap='round'/></svg>") 1 1, auto;
 }
 
 /* Card cursor glow (dark mode only) */
