@@ -11,9 +11,9 @@ export const t = {
     hero: {
       greeting: "Hi, I'm",
       name: "Leonid Tots",
-      role: "Backend Developer",
+      role: "Software Developer",
       description:
-        "Software Development student focused on backend engineering. I build APIs and server-side systems using Python, FastAPI, and PostgreSQL.",
+        "Software Development student. I build web applications, APIs, and automation tools using Python, FastAPI, PostgreSQL, and modern web technologies.",
       cta: "View Projects",
       ctaSecondary: "Contact Me",
       ctaCV: "Download CV",
@@ -30,7 +30,7 @@ export const t = {
       labelLanguages: "Languages",
       valueLocation: "Russia",
       valueSpecialty: "Software Development",
-      valueFocus: "Backend Development",
+      valueFocus: "Software Development",
       valueStatus: "Open to opportunities",
       valueLanguages: "Russian (native), English (B1)",
     },
@@ -67,9 +67,9 @@ export const t = {
     hero: {
       greeting: "Привет, я",
       name: "Леонид Тоц",
-      role: "Бэкенд-разработчик",
+      role: "Разработчик ПО",
       description:
-        "Студент специальности «Разработка ПО», специализируюсь на серверной разработке. Создаю API и серверные системы на Python, FastAPI и PostgreSQL.",
+        "Студент специальности «Разработка ПО». Создаю веб-приложения, API и инструменты автоматизации на Python, FastAPI, PostgreSQL и современных веб-технологиях.",
       cta: "Мои проекты",
       ctaSecondary: "Написать",
       ctaCV: "Скачать резюме",
@@ -86,7 +86,7 @@ export const t = {
       labelLanguages: "Языки",
       valueLocation: "Россия",
       valueSpecialty: "Разработка ПО",
-      valueFocus: "Бэкенд-разработка",
+      valueFocus: "Разработка ПО",
       valueStatus: "В поиске работы",
       valueLanguages: "Русский (родной), Английский (B1)",
     },

@@ -18,31 +18,31 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://leonidtots.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Leonid Tots — Backend Developer | Леонид Тоц",
+  title: "Leonid Tots — Software Developer Portfolio | Леонид Тоц",
   description:
-    "Portfolio of Leonid Tots (Леонид Тоц) — backend developer specializing in Python, FastAPI, and PostgreSQL. Open to junior positions and internships.",
+    "Personal portfolio of Leonid Tots (Леонид Тоц) — software developer. Projects, skills, and contacts. Python, FastAPI, PostgreSQL, Next.js.",
   authors: [{ name: "Leonid Tots" }],
   keywords: [
     "Leonid Tots",
     "Леонид Тоц",
     "Тоц Леонид",
-    "backend developer",
-    "бэкенд разработчик",
+    "software developer",
+    "разработчик ПО",
+    "portfolio",
+    "портфолио разработчика",
     "Python",
     "FastAPI",
     "PostgreSQL",
     "junior developer",
-    "портфолио разработчика",
-    "portfolio",
   ],
   alternates: {
     canonical: siteUrl,
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Leonid Tots — Backend Developer | Леонид Тоц",
+    title: "Leonid Tots — Software Developer Portfolio | Леонид Тоц",
     description:
-      "Portfolio of Leonid Tots (Леонид Тоц) — backend developer specializing in Python, FastAPI, and PostgreSQL.",
+      "Personal portfolio of Leonid Tots (Леонид Тоц) — software developer. Projects, skills, and contacts.",
     type: "website",
     locale: "en_US",
     alternateLocale: "ru_RU",
@@ -51,9 +51,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Leonid Tots — Backend Developer | Леонид Тоц",
+    title: "Leonid Tots — Software Developer Portfolio | Леонид Тоц",
     description:
-      "Portfolio of Leonid Tots (Леонид Тоц) — backend developer specializing in Python, FastAPI, and PostgreSQL.",
+      "Personal portfolio of Leonid Tots (Леонид Тоц) — software developer. Projects, skills, and contacts.",
   },
 };
 
@@ -62,7 +62,7 @@ const jsonLd = {
   "@type": "Person",
   name: "Leonid Tots",
   alternateName: ["Леонид Тоц", "Тоц Леонид"],
-  jobTitle: "Backend Developer",
+  jobTitle: "Software Developer",
   url: siteUrl,
   email: "leonid005xc@gmail.com",
   sameAs: [

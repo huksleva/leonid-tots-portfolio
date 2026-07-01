@@ -16,7 +16,7 @@ const SCREENS: ScreenData[] = [
     output: [
       "leonid-tots",
       "",
-      "  role:     Backend Developer",
+      "  role:     Software Developer",
       "  focus:    Python · FastAPI · PostgreSQL",
       "  studying: Software Development",
       "  status:   open to junior positions",
@@ -107,6 +107,7 @@ function TerminalScreen({ data, index }: { data: ScreenData; index: number }) {
   return (
     <section
       ref={ref}
+      style={{ scrollSnapAlign: "start" }}
       className="flex h-screen w-full flex-col justify-center px-8"
     >
       <div className="mx-auto w-full max-w-2xl font-mono text-sm leading-6">
@@ -175,12 +176,18 @@ export default function Terminal() {
         ← portfolio
       </Link>
 
-      <div className="fixed inset-0 overflow-y-scroll bg-[#030712]">
+      <div
+        className="fixed inset-0 overflow-y-scroll scroll-smooth bg-[#030712]"
+        style={{ scrollSnapType: "y mandatory" }}
+      >
         {SCREENS.map((screen, i) => (
           <TerminalScreen key={i} data={screen} index={i} />
         ))}
 
-        <section className="flex h-screen w-full flex-col items-center justify-center">
+        <section
+          style={{ scrollSnapAlign: "start" }}
+          className="flex h-screen w-full flex-col items-center justify-center"
+        >
           <div className="text-center font-mono">
             <p className="text-sm">
               <span className="text-emerald-500">~</span>

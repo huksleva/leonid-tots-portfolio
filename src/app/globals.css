@@ -85,6 +85,14 @@ html.dark {
   cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='13' height='21' viewBox='0 0 13 21'><path d='M1 1 L1 17 L5 13 L8 20 L10 19 L7 12 L12 12 Z' fill='white' stroke='rgba(0,0,0,0.35)' stroke-width='1.5' stroke-linejoin='round' stroke-linecap='round'/></svg>") 1 1, auto;
 }
 
+/* Prevent browser pointer (hand) on interactive elements — keep custom arrow */
+html a,
+html button,
+html [role="button"],
+html .cursor-pointer {
+  cursor: inherit;
+}
+
 /* Card cursor glow (dark mode only) */
 .card-glow::before {
   content: '';
