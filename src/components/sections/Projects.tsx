@@ -12,6 +12,7 @@ type Project = {
   featured?: boolean;
   media?: string;
   newsUrl?: string;
+  siteUrl?: string;
 };
 
 const projects: Project[] = [
@@ -22,6 +23,7 @@ const projects: Project[] = [
     github: "https://github.com/NerdySnake6/Tramplin-ai-career-platform",
     featured: true,
     newsUrl: "https://www.herzen.spb.ru/about/struct-uni/inst/i-it/news/65210/",
+    siteUrl: "https://tramplin.site/",
   },
   {
     name: "Epidemic Spread Simulation",
@@ -127,6 +129,16 @@ function ProjectModal({ project, desc, badge, noPreview, onClose }: ModalProps) 
             >
               GitHub ↗
             </a>
+            {project.siteUrl && (
+              <a
+                href={project.siteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-zinc-200 px-4 py-2 text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-400 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-500 dark:hover:text-zinc-100"
+              >
+                Сайт ↗
+              </a>
+            )}
             {project.newsUrl && (
               <a
                 href={project.newsUrl}
@@ -188,6 +200,17 @@ export default function Projects() {
                     )}
                   </div>
                   <div className="relative z-10 flex shrink-0 gap-2">
+                    {project.siteUrl && (
+                      <a
+                        href={project.siteUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="rounded-md border border-zinc-200 px-3 py-1 text-xs font-medium text-zinc-500 transition-colors hover:border-zinc-400 hover:text-zinc-800 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-zinc-500 dark:hover:text-zinc-200"
+                      >
+                        Сайт ↗
+                      </a>
+                    )}
                     {project.newsUrl && (
                       <a
                         href={project.newsUrl}
