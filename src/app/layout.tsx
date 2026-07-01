@@ -18,59 +18,62 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://leonidtots.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Leonid Tots — Software Developer Portfolio | Леонид Тоц",
+  title: "Тоц Леонид — Портфолио разработчика ПО | Leonid Tots",
   description:
-    "Personal portfolio of Leonid Tots (Леонид Тоц) — software developer. Projects, skills, and contacts. Python, FastAPI, PostgreSQL, Next.js.",
+    "Портфолио Леонида Тоца — разработчика ПО. Проекты на Python, FastAPI, PostgreSQL. Открыт к предложениям о работе и стажировке.",
   authors: [{ name: "Leonid Tots" }],
   keywords: [
-    "Leonid Tots",
-    "Леонид Тоц",
     "Тоц Леонид",
-    "software developer",
+    "Леонид Тоц",
+    "Leonid Tots",
     "разработчик ПО",
-    "portfolio",
     "портфолио разработчика",
-    "Python",
+    "Python разработчик",
+    "junior разработчик",
+    "разработчик Python",
     "FastAPI",
     "PostgreSQL",
-    "junior developer",
+    "software developer",
+    "portfolio",
   ],
   alternates: {
     canonical: siteUrl,
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Leonid Tots — Software Developer Portfolio | Леонид Тоц",
+    title: "Тоц Леонид — Портфолио разработчика ПО | Leonid Tots",
     description:
-      "Personal portfolio of Leonid Tots (Леонид Тоц) — software developer. Projects, skills, and contacts.",
+      "Портфолио Леонида Тоца — разработчика ПО. Проекты на Python, FastAPI, PostgreSQL. Открыт к предложениям.",
     type: "website",
-    locale: "en_US",
-    alternateLocale: "ru_RU",
+    locale: "ru_RU",
+    alternateLocale: "en_US",
     url: siteUrl,
-    siteName: "Leonid Tots Portfolio",
+    siteName: "Портфолио Леонида Тоца",
   },
   twitter: {
     card: "summary",
-    title: "Leonid Tots — Software Developer Portfolio | Леонид Тоц",
+    title: "Тоц Леонид — Портфолио разработчика ПО",
     description:
-      "Personal portfolio of Leonid Tots (Леонид Тоц) — software developer. Projects, skills, and contacts.",
+      "Портфолио Леонида Тоца — разработчика ПО. Python, FastAPI, PostgreSQL.",
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Leonid Tots",
-  alternateName: ["Леонид Тоц", "Тоц Леонид"],
-  jobTitle: "Software Developer",
+  name: "Леонид Тоц",
+  alternateName: ["Leonid Tots", "Тоц Леонид"],
+  jobTitle: "Разработчик ПО",
+  description: "Разработчик ПО. Проекты на Python, FastAPI, PostgreSQL.",
   url: siteUrl,
   email: "leonid005xc@gmail.com",
   sameAs: [
     "https://github.com/huksleva",
     "https://t.me/pots135",
   ],
-  knowsAbout: ["Python", "FastAPI", "PostgreSQL", "REST APIs", "Docker", "Git"],
+  knowsAbout: ["Python", "FastAPI", "PostgreSQL", "REST API", "Docker", "Git"],
   nationality: "Russian",
+  inLanguage: "ru",
 };
 
 export default function RootLayout({
@@ -80,7 +83,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="ru"
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
