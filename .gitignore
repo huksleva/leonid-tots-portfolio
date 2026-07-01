@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# project media (large files — add manually when compressed to <5 MB)
+/public/projects/

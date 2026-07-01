@@ -22,6 +22,7 @@ const projects: Project[] = [
     tags: ["Python", "FastAPI", "PostgreSQL", "SQLAlchemy", "Docker", "CI/CD", "JavaScript", "Vite"],
     github: "https://github.com/NerdySnake6/Tramplin-ai-career-platform",
     featured: true,
+    media: "/projects/tramplin.gif",
     newsUrl: "https://www.herzen.spb.ru/about/struct-uni/inst/i-it/news/65210/",
     siteUrl: "https://tramplin.site/",
   },
