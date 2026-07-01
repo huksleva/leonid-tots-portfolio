@@ -155,7 +155,12 @@ export default function Projects() {
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") setSelected(project);
                 }}
-                className="shimmer-card cursor-pointer rounded-xl border border-zinc-200 bg-zinc-50/80 p-6 transition-colors hover:border-zinc-300 dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:border-zinc-700"
+                onMouseMove={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  e.currentTarget.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+                  e.currentTarget.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+                }}
+                className="shimmer-card card-glow cursor-pointer rounded-xl border border-zinc-200 bg-zinc-50/80 p-6 transition-colors hover:border-zinc-300 dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:border-zinc-700"
               >
                 <div className="mb-3 flex items-start justify-between gap-4">
                   <div className="flex items-center gap-3">
