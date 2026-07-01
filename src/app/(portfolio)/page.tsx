@@ -15,13 +15,34 @@ export default function Home() {
         <Projects />
         <Contact />
       </main>
-      <footer className="py-10 text-center">
-        <Link
-          href="/lab"
-          className="font-mono text-xs text-zinc-500 transition-colors hover:text-zinc-300 dark:text-zinc-600 dark:hover:text-zinc-400"
-        >
-          / lab →
-        </Link>
+      <footer className="border-t border-zinc-100 px-6 py-8 dark:border-zinc-900">
+        <div className="mx-auto flex max-w-4xl flex-col items-center gap-4 sm:flex-row sm:justify-between">
+          <span className="font-mono text-xs text-zinc-400">© 2026 Leonid Tots</span>
+          <div className="flex gap-6">
+            <a
+              href="https://github.com/huksleva"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-600 dark:hover:text-zinc-300"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://t.me/pots135"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-600 dark:hover:text-zinc-300"
+            >
+              Telegram
+            </a>
+            <Link
+              href="/lab"
+              className="font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-600 dark:hover:text-zinc-300"
+            >
+              / lab
+            </Link>
+          </div>
+        </div>
       </footer>
     </>
   );

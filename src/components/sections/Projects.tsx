@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import Image from "next/image";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { useLang } from "@/contexts/LanguageContext";
 
@@ -70,12 +71,14 @@ function ProjectModal({ project, desc, badge, noPreview, onClose }: ModalProps) 
         className="relative w-full max-w-lg overflow-hidden rounded-2xl bg-white shadow-2xl dark:bg-zinc-900"
         style={{ animation: "fadeUp 0.25s ease both" }}
       >
-        <div className="aspect-video w-full bg-zinc-100 dark:bg-zinc-800">
+        <div className="relative aspect-video w-full bg-zinc-100 dark:bg-zinc-800">
           {project.media ? (
-            <img
+            <Image
               src={project.media}
               alt={project.name}
-              className="h-full w-full object-cover"
+              fill
+              unoptimized
+              className="object-cover"
             />
           ) : (
             <div className="flex h-full items-center justify-center">

@@ -20,8 +20,8 @@ export const t = {
     },
     about: {
       title: "About",
-      p1: "I'm a Software Development student with a focus on backend systems. I write Python — building APIs, automating tasks, and working with databases. My studies also cover systems programming in C and C++.",
-      p2: "Beyond coursework, I work with FastAPI, Flask, PostgreSQL, MongoDB, Docker, and other tools to build complete backend solutions.",
+      p1: "I'm a Software Development student. I write Python — building APIs, automating tasks, and working with databases. My studies also cover systems programming in C and C++.",
+      p2: "Beyond coursework, I work with FastAPI, Flask, PostgreSQL, MongoDB, Docker, and other tools to build complete software solutions.",
       p3: "This portfolio is part of that process. Every project here is something I built and understand.",
       labelLocation: "Location",
       labelSpecialty: "Specialty",
@@ -76,8 +76,8 @@ export const t = {
     },
     about: {
       title: "Обо мне",
-      p1: "Я студент специальности «Разработка ПО» с фокусом на серверной части. Пишу на Python — создаю API, автоматизирую задачи, работаю с базами данных. В рамках учёбы также изучаю системное программирование на C и C++.",
-      p2: "Помимо учёбы работаю с FastAPI, Flask, PostgreSQL, MongoDB, Docker и другими инструментами для построения серверных решений.",
+      p1: "Я студент специальности «Разработка ПО». Пишу на Python — создаю API, автоматизирую задачи, работаю с базами данных. В рамках учёбы также изучаю системное программирование на C и C++.",
+      p2: "Помимо учёбы работаю с FastAPI, Flask, PostgreSQL, MongoDB, Docker и другими инструментами для создания программных решений.",
       p3: "Это портфолио — часть этого процесса. Каждый проект здесь я написал и понимаю.",
       labelLocation: "Местоположение",
       labelSpecialty: "Специальность",
