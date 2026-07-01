@@ -11,6 +11,7 @@ type Project = {
   github: string;
   featured?: boolean;
   media?: string;
+  newsUrl?: string;
 };
 
 const projects: Project[] = [
@@ -20,6 +21,7 @@ const projects: Project[] = [
     tags: ["Python", "FastAPI", "PostgreSQL", "SQLAlchemy", "Docker", "CI/CD", "JavaScript", "Vite"],
     github: "https://github.com/NerdySnake6/Tramplin-ai-career-platform",
     featured: true,
+    newsUrl: "https://www.herzen.spb.ru/about/struct-uni/inst/i-it/news/65210/",
   },
   {
     name: "Epidemic Spread Simulation",
@@ -116,14 +118,26 @@ function ProjectModal({ project, desc, badge, noPreview, onClose }: ModalProps) 
             ))}
           </div>
 
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white"
-          >
-            GitHub ↗
-          </a>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white"
+            >
+              GitHub ↗
+            </a>
+            {project.newsUrl && (
+              <a
+                href={project.newsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-zinc-200 px-4 py-2 text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-400 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-500 dark:hover:text-zinc-100"
+              >
+                В СМИ ↗
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </div>
@@ -173,15 +187,28 @@ export default function Projects() {
                       </span>
                     )}
                   </div>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="relative z-10 shrink-0 rounded-md border border-zinc-200 px-3 py-1 text-xs font-medium text-zinc-500 transition-colors hover:border-zinc-400 hover:text-zinc-800 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-zinc-500 dark:hover:text-zinc-200"
-                  >
-                    GitHub ↗
-                  </a>
+                  <div className="relative z-10 flex shrink-0 gap-2">
+                    {project.newsUrl && (
+                      <a
+                        href={project.newsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="rounded-md border border-zinc-200 px-3 py-1 text-xs font-medium text-zinc-500 transition-colors hover:border-zinc-400 hover:text-zinc-800 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-zinc-500 dark:hover:text-zinc-200"
+                      >
+                        В СМИ ↗
+                      </a>
+                    )}
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="rounded-md border border-zinc-200 px-3 py-1 text-xs font-medium text-zinc-500 transition-colors hover:border-zinc-400 hover:text-zinc-800 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-zinc-500 dark:hover:text-zinc-200"
+                    >
+                      GitHub ↗
+                    </a>
+                  </div>
                 </div>
                 <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
                   {p[project.descKey]}
