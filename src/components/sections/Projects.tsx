@@ -31,12 +31,14 @@ const projects: Project[] = [
     descKey: "d2",
     tags: ["Python", "NumPy", "Matplotlib", "Simulation"],
     github: "https://github.com/huksleva/Coursework_computer_simulation",
+    media: "/projects/epidemic.gif",
   },
   {
     name: "Solar System Visualization",
     descKey: "d3",
     tags: ["Python", "turtle", "pywin32"],
     github: "https://github.com/huksleva/SolarSystemPyTurtle",
+    media: "/projects/solar_system.gif",
   },
 ];
 
