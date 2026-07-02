@@ -7,7 +7,7 @@ import { useLang } from "@/contexts/LanguageContext";
 
 type Project = {
   name: string;
-  descKey: "d1" | "d2" | "d3";
+  descKey: "d1" | "d2" | "d3" | "d4" | "d5" | "d6";
   tags: string[];
   github: string;
   featured?: boolean;
@@ -40,6 +40,24 @@ const projects: Project[] = [
     tags: ["Python", "turtle", "pywin32"],
     github: "https://github.com/huksleva/SolarSystemPyTurtle",
     media: "/projects/solar_system.gif",
+  },
+  {
+    name: "MP3 Metadata Editor",
+    descKey: "d4",
+    tags: ["C", "CMake", "ID3v2"],
+    github: "https://github.com/huksleva/C_mp3",
+  },
+  {
+    name: "Computational Mathematics",
+    descKey: "d5",
+    tags: ["C#", ".NET"],
+    github: "https://github.com/huksleva/Computationalmathematics",
+  },
+  {
+    name: "Fractal Simulator",
+    descKey: "d6",
+    tags: ["Python", "Simulation", "Visualization"],
+    github: "https://github.com/huksleva/Fractals",
   },
 ];
 

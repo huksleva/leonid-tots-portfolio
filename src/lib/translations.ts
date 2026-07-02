@@ -51,6 +51,9 @@ export const t = {
       d1: "Career platform for students and employers with role-based access, AI-assisted job descriptions and cover letters, two-tier moderation, and interactive opportunity mapping via Yandex Maps API. Built as a team at IF...ELSE 2026 hackathon — 2nd place.",
       d2: "A cellular automaton model of infectious disease spread across a 2D grid population. Supports multiple virus profiles (COVID-19, Flu, Measles), real-time statistics visualization, interactive controls, and manual outbreak placement.",
       d3: "Physics-based simulation of planetary orbits using real NASA data. Adapts to screen resolution, includes speed controls, pause/resume, and orbital path toggling. Built with Python's built-in turtle graphics library.",
+      d4: "A C program for reading and writing metadata in MP3 files following the ID3v2.4.0 standard. Parses binary file structures, handles text encoding, and modifies tag frames directly in the file without re-encoding audio.",
+      d5: "Desktop application implementing computational mathematics algorithms in C#. Covers numerical methods for solving equations, integration, and function approximation. Four major releases with iterative improvements.",
+      d6: "A fractal generation and visualization program. Renders multiple fractal types with adjustable parameters, demonstrating recursive algorithms and mathematical visualization in Python.",
     },
     contact: {
       title: "Contact",
@@ -117,6 +120,9 @@ export const t = {
       d1: "Платформа для студентов и работодателей с ролевым доступом, AI-помощью при написании вакансий и сопроводительных писем, двухуровневой модерацией и картой возможностей через API Яндекс.Карт. Создано в команде на хакатоне IF...ELSE 2026 — 2-е место.",
       d2: "Модель клеточного автомата для распространения инфекционных болезней на двумерной сетке. Поддерживает несколько вирусных профилей (COVID-19, грипп, корь), визуализацию статистики в реальном времени, интерактивное управление и ручное размещение вспышек.",
       d3: "Физически обоснованная симуляция орбитального движения планет с использованием реальных данных NASA. Адаптируется к разрешению экрана, включает управление скоростью, паузу и переключение отображения орбит. Создано с использованием встроенной библиотеки Python turtle.",
+      d4: "Программа на C для чтения и записи метаданных MP3-файлов по стандарту ID3v2.4.0. Парсит бинарную структуру файла, работает с кодировками текста и напрямую изменяет теговые фреймы без перекодирования аудио.",
+      d5: "Десктопное приложение на C# для решения задач вычислительной математики. Реализует численные методы для решения уравнений, интегрирования и аппроксимации функций. Четыре крупных релиза с итеративными улучшениями.",
+      d6: "Программа для генерации и визуализации фракталов. Рендерит несколько типов фракталов с настраиваемыми параметрами, демонстрируя рекурсивные алгоритмы и математическую визуализацию на Python.",
     },
     contact: {
       title: "Контакт",
