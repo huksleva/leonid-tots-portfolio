@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Тоц Леонид — Портфолио разработчика ПО | Leonid Tots",
   description:
-    "Портфолио Леонида Тоца — разработчика ПО. Проекты на Python, FastAPI, PostgreSQL. Открыт к предложениям о работе и стажировке.",
+    "Портфолио Тоц Леонида — разработчика ПО. Проекты на Python, FastAPI, PostgreSQL. Открыт к предложениям о работе и стажировке.",
   authors: [{ name: "Leonid Tots" }],
   keywords: [
     "Тоц Леонид",
@@ -44,18 +44,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Тоц Леонид — Портфолио разработчика ПО | Leonid Tots",
     description:
-      "Портфолио Леонида Тоца — разработчика ПО. Проекты на Python, FastAPI, PostgreSQL. Открыт к предложениям.",
+      "Портфолио Тоц Леонида — разработчика ПО. Проекты на Python, FastAPI, PostgreSQL. Открыт к предложениям.",
     type: "website",
     locale: "ru_RU",
     alternateLocale: "en_US",
     url: siteUrl,
-    siteName: "Портфолио Леонида Тоца",
+    siteName: "Портфолио Тоц Леонида",
   },
   twitter: {
     card: "summary",
     title: "Тоц Леонид — Портфолио разработчика ПО",
     description:
-      "Портфолио Леонида Тоца — разработчика ПО. Python, FastAPI, PostgreSQL.",
+      "Портфолио Тоц Леонида — разработчика ПО. Python, FastAPI, PostgreSQL.",
   },
 };
 
