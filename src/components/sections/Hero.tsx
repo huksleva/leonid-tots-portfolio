@@ -59,9 +59,10 @@ export default function Hero() {
           href={CV_URLS[lang]}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-lg border border-zinc-300 px-5 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-500 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-500 dark:hover:text-zinc-100"
+          className="inline-flex items-center gap-2 rounded-lg border border-zinc-300 px-5 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-500 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-500 dark:hover:text-zinc-100"
         >
-          ↗ {tr.hero.ctaCV}
+          {tr.hero.ctaCV}
+          <span className="text-zinc-400 dark:text-zinc-500">↗</span>
         </a>
       </div>
     </section>
