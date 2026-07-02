@@ -26,6 +26,7 @@ No UI libraries. No animation libraries. Everything is built from scratch.
 - Scroll-triggered section animations via `IntersectionObserver`
 - Smooth snap-scroll terminal in `/lab` (`scroll-snap-type: y mandatory` + `scroll-smooth`)
 - Interactive 404 page — terminal with command history, glitch animation on "404", scanline overlay
+- Hidden cover letter page at `/cover-letter` — EN/RU, no links from the main site; share the URL directly with employers
 
 **Internationalisation**
 - EN / RU language switcher (React Context, no routing, no extra bundle)

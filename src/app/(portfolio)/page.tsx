@@ -36,12 +36,6 @@ export default function Home() {
               Telegram
             </a>
             <Link
-              href="/cover-letter"
-              className="font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-600 dark:hover:text-zinc-300"
-            >
-              letter
-            </Link>
-            <Link
               href="/lab"
               className="font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-600 dark:hover:text-zinc-300"
             >
