@@ -53,6 +53,7 @@ const projects: Project[] = [
     descKey: "d5",
     tags: ["C#", ".NET"],
     github: "https://github.com/huksleva/Computationalmathematics",
+    media: "/projects/integrals.png",
   },
   {
     name: "Fractal Simulator",
