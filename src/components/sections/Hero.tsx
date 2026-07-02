@@ -40,18 +40,18 @@ export default function Hero() {
         {tr.hero.description}
       </p>
       <div
-        className="mt-10 flex flex-wrap justify-center gap-3"
+        className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center"
         style={{ animation: "fadeUp 0.6s ease 0.6s both" }}
       >
         <a
           href="#projects"
-          className="rounded-lg bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white"
+          className="w-48 rounded-lg bg-zinc-900 px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white sm:w-auto"
         >
           {tr.hero.cta}
         </a>
         <a
           href="#contacts"
-          className="rounded-lg border border-zinc-300 px-5 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-500 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-500 dark:hover:text-zinc-100"
+          className="w-48 rounded-lg border border-zinc-300 px-5 py-2.5 text-center text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-500 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-500 dark:hover:text-zinc-100 sm:w-auto"
         >
           {tr.hero.ctaSecondary}
         </a>
@@ -59,7 +59,7 @@ export default function Hero() {
           href={CV_URLS[lang]}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-lg border border-zinc-300 px-5 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-500 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-500 dark:hover:text-zinc-100"
+          className="inline-flex w-48 items-center justify-center gap-2 rounded-lg border border-zinc-300 px-5 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-500 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-500 dark:hover:text-zinc-100 sm:w-auto"
         >
           {tr.hero.ctaCV}
           <span className="text-zinc-400 dark:text-zinc-500">↗</span>

@@ -73,7 +73,7 @@ export default function Navbar() {
           {tr.hero.name}
         </a>
         <div className="flex items-center gap-6">
-          <ul className="flex items-center gap-6">
+          <ul className="hidden items-center gap-6 sm:flex">
             {navLinks.map(({ label, href }) => {
               const isActive = activeSection === href.slice(1);
               return (
@@ -95,7 +95,7 @@ export default function Navbar() {
           </ul>
           <Link
             href="/lab"
-            className="font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-600 dark:text-zinc-500 dark:hover:text-zinc-300"
+            className="hidden font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-600 dark:text-zinc-500 dark:hover:text-zinc-300 sm:block"
           >
             / lab
           </Link>
