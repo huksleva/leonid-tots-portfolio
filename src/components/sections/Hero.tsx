@@ -34,7 +34,7 @@ export default function Hero() {
         {tr.hero.role}
       </h2>
       <p
-        className="max-w-xl text-base leading-relaxed text-zinc-500"
+        className="max-w-xl text-base leading-relaxed text-zinc-500 dark:text-zinc-400"
         style={{ animation: "fadeUp 0.6s ease 0.45s both" }}
       >
         {tr.hero.description}

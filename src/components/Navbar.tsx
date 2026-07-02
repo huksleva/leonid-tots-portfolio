@@ -84,7 +84,7 @@ export default function Navbar() {
                     className={`text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:rounded ${
                       isActive
                         ? "text-zinc-900 dark:text-zinc-100"
-                        : "text-zinc-400 hover:text-zinc-600 dark:text-zinc-500 dark:hover:text-zinc-300"
+                        : "text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200"
                     }`}
                   >
                     {label}
@@ -95,7 +95,7 @@ export default function Navbar() {
           </ul>
           <Link
             href="/lab"
-            className="hidden font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-600 dark:text-zinc-500 dark:hover:text-zinc-300 sm:block"
+            className="hidden font-mono text-xs text-zinc-500 transition-colors hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200 sm:block"
           >
             / lab
           </Link>
