@@ -8,7 +8,7 @@ export default function PortfolioLayout({
   return (
     <>
       <Navbar />
-      <div className="pt-16">{children}</div>
+      <div id="main-content" className="pt-16">{children}</div>
     </>
   );
 }

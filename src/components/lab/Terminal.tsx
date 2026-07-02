@@ -53,6 +53,30 @@ const SCREENS: ScreenData[] = [
       "github    github.com/huksleva",
     ],
   },
+  {
+    dir: "~/education",
+    command: "cat readme.md",
+    output: [
+      "Herzen University, St. Petersburg",
+      "Applied Informatics — year 3",
+      "",
+      "self-study:",
+      "  TypeScript · React · Next.js",
+      "  algorithms · system design",
+      "  english: B2",
+    ],
+  },
+  {
+    dir: "~",
+    command: "uptime",
+    output: [
+      "up 3+ years  |  sessions: countless",
+      "",
+      "  motivation:   [████████████] 100%",
+      "  coffee level: [████████░░░░]  67%",
+      "  open to work: yes — junior / internship",
+    ],
+  },
 ];
 
 function useTyping(text: string, active: boolean, speed = 40): [string, boolean] {

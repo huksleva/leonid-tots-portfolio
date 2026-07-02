@@ -52,6 +52,8 @@ type ModalProps = {
 };
 
 function ProjectModal({ project, desc, badge, noPreview, onClose }: ModalProps) {
+  const [imgLoaded, setImgLoaded] = useState(false);
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
     document.addEventListener("keydown", onKey);
@@ -73,13 +75,19 @@ function ProjectModal({ project, desc, badge, noPreview, onClose }: ModalProps) 
       >
         <div className="relative aspect-video w-full bg-zinc-100 dark:bg-zinc-800">
           {project.media ? (
-            <Image
-              src={project.media}
-              alt={project.name}
-              fill
-              unoptimized
-              className="object-cover"
-            />
+            <>
+              {!imgLoaded && (
+                <div className="absolute inset-0 animate-pulse bg-zinc-200 dark:bg-zinc-700" />
+              )}
+              <Image
+                src={project.media}
+                alt={project.name}
+                fill
+                unoptimized
+                onLoad={() => setImgLoaded(true)}
+                className={`object-cover transition-opacity duration-300 ${imgLoaded ? "opacity-100" : "opacity-0"}`}
+              />
+            </>
           ) : (
             <div className="flex h-full items-center justify-center">
               <p className="font-mono text-xs text-zinc-400">{noPreview}</p>
