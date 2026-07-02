@@ -17,7 +17,7 @@ const LETTER = {
     closing: "Best regards,",
     name: "Leonid Tots",
     resumeLabel: "CV",
-    resumeHref: "/leonid-tots-software-developer-en.pdf",
+    resumeHref: "https://rxresu.me/leonid005xc/leonid-tots-software-developer-en",
   },
   ru: {
     back: "← Назад",
@@ -32,7 +32,7 @@ const LETTER = {
     closing: "С уважением,",
     name: "Леонид Тоц",
     resumeLabel: "Резюме",
-    resumeHref: "/leonid-tots-software-developer.pdf",
+    resumeHref: "https://rxresu.me/leonid005xc/leonid-tots-software-developer",
   },
 } as const;
 

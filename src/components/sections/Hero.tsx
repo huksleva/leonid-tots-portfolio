@@ -3,8 +3,8 @@
 import { useLang } from "@/contexts/LanguageContext";
 
 const CV_URLS: Record<"en" | "ru", string> = {
-  en: "/leonid-tots-software-developer-en.pdf",
-  ru: "/leonid-tots-software-developer.pdf",
+  en: "https://rxresu.me/leonid005xc/leonid-tots-software-developer-en",
+  ru: "https://rxresu.me/leonid005xc/leonid-tots-software-developer",
 };
 
 export default function Hero() {
