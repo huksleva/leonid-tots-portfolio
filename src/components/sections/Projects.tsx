@@ -78,6 +78,21 @@ function ProjectModal({ project, desc, badge, noPreview, onClose }: ModalProps) 
     return () => document.removeEventListener("keydown", onKey);
   }, [onClose]);
 
+  useEffect(() => {
+    const scrollY = window.scrollY;
+    document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      window.scrollTo(0, scrollY);
+    };
+  }, []);
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
       <div
