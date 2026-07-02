@@ -58,6 +58,7 @@ const projects: Project[] = [
     descKey: "d6",
     tags: ["Python", "Simulation", "Visualization"],
     github: "https://github.com/huksleva/Fractals",
+    media: "/projects/fractals.png",
   },
 ];
 
