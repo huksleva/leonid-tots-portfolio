@@ -1,161 +1,161 @@
 # leonid-tots-portfolio
 
-Personal portfolio of Leonid Tots — Software Developer.
+Личное портфолио Леонида Тоца — Software Developer.
 
 **Live:** https://leonidtots.dev
 
 ---
 
-## Stack
+## Стек
 
 - **Next.js 16** (App Router, TypeScript strict)
 - **React 19**
-- **Tailwind CSS v4** (CSS-first config)
-- **Geist** font (Vercel)
+- **Tailwind CSS v4** (CSS-first конфигурация)
+- Шрифт **Geist** (Vercel)
 
-No UI libraries. No animation libraries. Everything is built from scratch.
+Без UI-библиотек. Без библиотек анимаций. Всё написано с нуля.
 
 ---
 
-## Features
+## Возможности
 
-**UX / Interaction**
-- Custom CSS cursor — Apple-style arrow SVG, separate versions for light and dark theme, no JS lag
-- Card glow effect — radial gradient follows the cursor in dark mode (CSS custom properties via `onMouseMove`)
-- Shimmer sweep on card hover (CSS `::after` diagonal animation)
-- Scroll-triggered section animations via `IntersectionObserver`
-- Smooth snap-scroll terminal in `/lab` (`scroll-snap-type: y mandatory` + `scroll-smooth`)
-- Interactive 404 page — terminal with command history, glitch animation on "404", scanline overlay
-- Hidden cover letter page at `/cover-letter` — EN/RU, no links from the main site; share the URL directly with employers
+**UX / Интерактив**
+- Кастомный CSS-курсор — SVG-стрелка в стиле Apple, отдельные версии для светлой и тёмной темы, без JS-лагов
+- Эффект свечения карточек — радиальный градиент следует за курсором в тёмной теме (CSS custom properties через `onMouseMove`)
+- Диагональный shimmer-блик при наведении на карточку (CSS-анимация через `::after`)
+- Анимации секций при скролле через `IntersectionObserver`
+- Плавный snap-скролл терминала на `/lab` (`scroll-snap-type: y mandatory` + `scroll-smooth`)
+- Интерактивная страница 404 — терминал с историей команд, glitch-анимация на «404», оверлей со сканлайнами
+- Скрытая страница сопроводительного письма на `/cover-letter` — EN/RU, без ссылок с основного сайта; URL передаётся работодателям напрямую
 
-**Internationalisation**
-- EN / RU language switcher (React Context, no routing, no extra bundle)
-- Language-aware CV button — links to the matching Reactive Resume page (always up to date, no PDF to re-upload)
+**Интернационализация**
+- Переключатель языка EN / RU (React Context, без роутинга, без лишнего бандла)
+- Кнопка CV с учётом языка — ведёт на соответствующую страницу Reactive Resume (всегда актуально, не нужно перезаливать PDF)
 
-**Projects section**
-- Modal with image/GIF preview, skeleton pulse loader while media loads
-- Per-project `imagePosition` field for custom `object-position` (e.g. align left for wide screenshots)
-- Body scroll locked when modal is open — `position: fixed` technique for iOS Safari compatibility
-- Per-project links: GitHub, live site, press coverage
-- Keyboard accessible (Escape to close, Enter/Space to open)
-- Mobile layout: title + badge stack above buttons on narrow screens
+**Секция проектов**
+- Модальное окно с превью изображения/GIF и skeleton-лоадером с пульсацией на время загрузки медиа
+- Поле `imagePosition` у каждого проекта для кастомного `object-position` (например, выравнивание влево для широких скриншотов)
+- Блокировка скролла body при открытой модалке — техника `position: fixed` для совместимости с iOS Safari
+- Ссылки у каждого проекта: GitHub, живой сайт, упоминания в прессе
+- Доступность с клавиатуры (Escape — закрыть, Enter/Space — открыть)
+- Мобильная вёрстка: заголовок и бейдж располагаются над кнопками на узких экранах
 
-**Theme**
-- Light / dark with `localStorage` persistence and zero flash on load
-- `<Script strategy="beforeInteractive">` applies the saved class before first paint
-- `suppressHydrationWarning` on `<html>` prevents React mismatch
+**Тема**
+- Светлая / тёмная с сохранением в `localStorage` и нулевым миганием при загрузке
+- `<Script strategy="beforeInteractive">` применяет сохранённый класс до первой отрисовки
+- `suppressHydrationWarning` на `<html>` предотвращает несовпадение при гидратации React
 
-**Contact**
-- Contact form with server-side email delivery via Resend
-- Honeypot field for spam protection
-- Client-side and server-side validation (required fields, max lengths, email regex)
+**Контакты**
+- Контактная форма с серверной отправкой писем через Resend
+- Honeypot-поле для защиты от спама
+- Валидация на клиенте и на сервере (обязательные поля, ограничение длины, regex для email)
 
-**SEO / Meta**
-- Russian-first title and description (`lang="ru"`)
-- Auto-generated OG image 1200×630 and favicon via `ImageResponse`
-- JSON-LD structured data (Person schema)
+**SEO / Мета**
+- Заголовок и описание в первую очередь на русском (`lang="ru"`)
+- Автогенерация OG-изображения 1200×630 и фавиконки через `ImageResponse`
+- Структурированные данные JSON-LD (схема Person)
 - Canonical URL, robots meta, Open Graph, Twitter card
-- `sitemap.ts` — only the main page is indexed; `/lab` is noindex, `/cover-letter` is hidden
-- `@vercel/speed-insights` for real-user performance monitoring
+- `sitemap.ts` — индексируется только главная страница; `/lab` — noindex, `/cover-letter` скрыта
+- `@vercel/speed-insights` для мониторинга производительности на реальных пользователях
 - Lighthouse (mobile): **93 / 100 / 100 / 100** (Performance / Accessibility / Best Practices / SEO)
 
-**Accessibility**
-- Skip-to-content link
-- `aria-label` on all icon buttons
-- `aria-modal` / `role="dialog"` on project modal
-- Color contrast ≥ 4.5:1 in both themes
+**Доступность**
+- Ссылка «перейти к содержимому» (skip-to-content)
+- `aria-label` на всех кнопках-иконках
+- `aria-modal` / `role="dialog"` на модалке проектов
+- Контраст цветов ≥ 4.5:1 в обеих темах
 
 ---
 
-## Project structure
+## Структура проекта
 
 ```
 src/
 ├── app/
-│   ├── (portfolio)/            # Pages with Navbar (route group)
-│   │   ├── layout.tsx          # Navbar + main-content wrapper
+│   ├── (portfolio)/            # Страницы с Navbar (route group)
+│   │   ├── layout.tsx          # Navbar + обёртка main-content
 │   │   ├── page.tsx            # Hero, About, Skills, Projects, Contact, Footer
 │   │   └── cover-letter/
-│   │       └── page.tsx        # Hidden cover letter page (EN/RU)
+│   │       └── page.tsx        # Скрытая страница сопроводительного письма (EN/RU)
 │   ├── api/
 │   │   └── contact/
-│   │       └── route.ts        # POST handler — validates input, sends email via Resend
+│   │       └── route.ts        # POST-хендлер — валидирует ввод, отправляет письмо через Resend
 │   ├── lab/
-│   │   └── page.tsx            # /lab — terminal experience (noindex)
-│   ├── not-found.tsx           # Interactive 404 terminal page
-│   ├── opengraph-image.tsx     # Auto-generated OG image via ImageResponse
-│   ├── icon.tsx                # Auto-generated favicon via ImageResponse
-│   ├── sitemap.ts              # Sitemap — main page only
-│   ├── layout.tsx              # Root layout: fonts, theme script, SEO, providers
-│   └── globals.css             # Tailwind, keyframes, cursor, glow, shimmer
+│   │   └── page.tsx            # /lab — терминальный экспириенс (noindex)
+│   ├── not-found.tsx           # Интерактивная терминальная страница 404
+│   ├── opengraph-image.tsx     # Автогенерация OG-изображения через ImageResponse
+│   ├── icon.tsx                # Автогенерация фавиконки через ImageResponse
+│   ├── sitemap.ts              # Sitemap — только главная страница
+│   ├── layout.tsx              # Корневой layout: шрифты, скрипт темы, SEO, провайдеры
+│   └── globals.css             # Tailwind, keyframes, курсор, glow, shimmer
 ├── components/
-│   ├── Navbar.tsx              # Fixed nav with IntersectionObserver active section
-│   ├── AnimateOnScroll.tsx     # Reusable fadeUp wrapper
+│   ├── Navbar.tsx              # Фиксированная навигация с активной секцией через IntersectionObserver
+│   ├── AnimateOnScroll.tsx     # Переиспользуемая обёртка fadeUp
 │   ├── sections/
-│   │   ├── Hero.tsx            # Name, role, CTA buttons, language-aware CV
+│   │   ├── Hero.tsx            # Имя, роль, CTA-кнопки, языко-зависимое CV
 │   │   ├── About.tsx
 │   │   ├── Skills.tsx
-│   │   ├── Projects.tsx        # Cards + modal with media skeleton loader
-│   │   └── Contact.tsx         # Contact cards + email form
+│   │   ├── Projects.tsx        # Карточки + модалка со skeleton-лоадером медиа
+│   │   └── Contact.tsx         # Контактные карточки + форма email
 │   └── lab/
-│       └── Terminal.tsx        # 6-screen snap-scroll terminal with typing animation
+│       └── Terminal.tsx        # Snap-скролл терминал из 6 экранов с анимацией печати
 ├── contexts/
 │   ├── LanguageContext.tsx     # lang, toggle, tr()
 │   └── ThemeContext.tsx
 └── lib/
-    └── translations.ts         # All UI strings for EN and RU
+    └── translations.ts         # Все строки интерфейса для EN и RU
 ```
 
 ---
 
-## Public assets
+## Публичные ресурсы
 
 ```
 public/
 └── projects/
-    ├── tramplin.gif            # AI career platform preview
-    ├── epidemic.gif            # Disease spread simulation preview
-    ├── solar_system.gif        # Solar system visualization preview
-    ├── fractals.png            # Fractal simulator preview
-    ├── integrals.png           # Computational mathematics preview
-    └── mp3.svg                 # MP3 metadata editor preview (vector)
+    ├── tramplin.gif            # Превью AI-платформы для карьеры
+    ├── epidemic.gif            # Превью симуляции распространения болезни
+    ├── solar_system.gif        # Превью визуализации Солнечной системы
+    ├── fractals.png            # Превью симулятора фракталов
+    ├── integrals.png           # Превью вычислительной математики
+    └── mp3.svg                 # Превью редактора MP3-метаданных (вектор)
 ```
 
 ---
 
-## Local development
+## Локальная разработка
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Откройте [http://localhost:3000](http://localhost:3000).
 
 ---
 
-## Technical notes
+## Технические заметки
 
-**Theme without flash** — `<Script strategy="beforeInteractive">` runs a one-liner synchronously in `<head>` before React hydrates. It reads `localStorage` and adds `class="dark"` to `<html>` if needed. `suppressHydrationWarning` prevents React mismatch on the `<html>` node.
+**Тема без мигания** — `<Script strategy="beforeInteractive">` синхронно выполняет однострочник в `<head>` до гидратации React. Он читает `localStorage` и при необходимости добавляет `class="dark"` на `<html>`. `suppressHydrationWarning` предотвращает конфликт гидратации React на узле `<html>`.
 
-**Route groups** — the `(portfolio)` group adds `Navbar` only to main-page routes. `/lab` sits outside the group and renders without any chrome.
+**Route groups** — группа `(portfolio)` добавляет `Navbar` только к маршрутам главной страницы. `/lab` находится вне группы и рендерится без какого-либо обрамления.
 
-**Custom cursor** — a data-URI SVG set via CSS `cursor: url(...)`. No JavaScript involved, no lag. `cursor: inherit` on all interactive elements (including `input`, `textarea`, `select`) keeps the arrow consistent instead of showing the browser's pointer hand.
+**Кастомный курсор** — SVG в виде data-URI, задан через CSS `cursor: url(...)`. Никакого JavaScript, никаких лагов. `cursor: inherit` на всех интерактивных элементах (включая `input`, `textarea`, `select`) сохраняет стрелку вместо браузерной «руки».
 
-**Card glow** — `onMouseMove` writes `--mouse-x` / `--mouse-y` CSS custom properties on the card element. A `::before` pseudo-element uses `radial-gradient` centered at those coordinates. Active only in dark mode via `:where(.dark) .card-glow::before`.
+**Свечение карточек** — `onMouseMove` записывает CSS custom properties `--mouse-x` / `--mouse-y` на элемент карточки. Псевдоэлемент `::before` использует `radial-gradient` с центром в этих координатах. Активно только в тёмной теме через `:where(.dark) .card-glow::before`.
 
-**Body scroll lock** — when the project modal opens, `document.body.style.position = "fixed"` + `top: -${scrollY}px` is applied. Plain `overflow: hidden` is not enough on iOS Safari — `position: fixed` is the only reliable method. The saved `scrollY` is restored on close to prevent the page jumping to the top.
+**Блокировка скролла body** — при открытии модалки проекта применяется `document.body.style.position = "fixed"` + `top: -${scrollY}px`. Обычного `overflow: hidden` недостаточно на iOS Safari — `position: fixed` единственный надёжный метод. Сохранённый `scrollY` восстанавливается при закрытии, чтобы страница не прыгала наверх.
 
-**Modal image position** — each project in the `projects` array accepts an optional `imagePosition` string (e.g. `"left center"`). It is passed to `<Image style={{ objectPosition }}>` so wide screenshots can be cropped from the correct edge instead of always centering.
+**Позиция изображения в модалке** — каждый проект в массиве `projects` принимает опциональную строку `imagePosition` (например, `"left center"`). Она передаётся в `<Image style={{ objectPosition }}>`, чтобы широкие скриншоты обрезались с нужного края, а не всегда по центру.
 
-**Terminal /lab** — `IntersectionObserver` with `threshold: 0.6` triggers a `setInterval` typewriter per screen. Output lines appear with staggered `animation-delay`. The scroll container uses `scroll-snap-type: y mandatory` so each section snaps into view. Six screens total: `whoami`, `cat stack.json`, `git log`, `cat contact`, `cat readme.md`, `uptime`.
+**Терминал /lab** — `IntersectionObserver` с `threshold: 0.6` запускает `setInterval`-«печатную машинку» для каждого экрана. Строки вывода появляются со ступенчатым `animation-delay`. Скролл-контейнер использует `scroll-snap-type: y mandatory`, поэтому каждая секция «прилипает» к экрану. Всего шесть экранов: `whoami`, `cat stack.json`, `git log`, `cat contact`, `cat readme.md`, `uptime`.
 
-**GIF/image skeleton loader** — `useState<boolean>` tracks whether the `<Image>` has fired `onLoad`. Before load: an `animate-pulse` div overlays the container. After load: the image transitions from `opacity-0` to `opacity-100` over 300 ms.
+**Skeleton-лоадер GIF/изображений** — `useState<boolean>` отслеживает, сработал ли `onLoad` у `<Image>`. До загрузки контейнер перекрывает div с `animate-pulse`. После загрузки изображение переходит из `opacity-0` в `opacity-100` за 300 мс.
 
-**OG image and favicon** — generated at build time via Next.js `ImageResponse` in `opengraph-image.tsx` and `icon.tsx`. No static image files needed.
+**OG-изображение и фавиконка** — генерируются на этапе сборки через `ImageResponse` Next.js в `opengraph-image.tsx` и `icon.tsx`. Статические файлы изображений не нужны.
 
-**404 page** — `not-found.tsx` is a client component that renders a fake interactive terminal. Supports a set of commands (`help`, `ls`, `pwd`, `whoami`, `git blame`, `man lost`, etc.) with `↑ / ↓` command history. `cd /` and `exit` redirect to the homepage after 700 ms. A CSS glitch animation fires on the "404" heading every ~5 seconds.
+**Страница 404** — `not-found.tsx` — клиентский компонент, отрисовывающий фейковый интерактивный терминал. Поддерживает набор команд (`help`, `ls`, `pwd`, `whoami`, `git blame`, `man lost` и др.) с историей команд по `↑ / ↓`. `cd /` и `exit` перенаправляют на главную через 700 мс. CSS glitch-анимация срабатывает на заголовке «404» примерно каждые 5 секунд.
 
-**Contact form** — `POST /api/contact` validates name, email, and message server-side, then sends via Resend. A hidden `name="website"` honeypot field is included; any submission that fills it is silently discarded. The Resend client is initialised inside the handler (not at module level) to avoid build-time errors when `RESEND_API_KEY` is absent.
+**Контактная форма** — `POST /api/contact` валидирует имя, email и сообщение на сервере, затем отправляет через Resend. Включено скрытое honeypot-поле `name="website"`; любая отправка с заполненным полем молча отбрасывается. Клиент Resend инициализируется внутри хендлера (а не на уровне модуля), чтобы избежать ошибок сборки при отсутствии `RESEND_API_KEY`.
 
-**Performance** — `browserslist` in `package.json` targets Chrome/Edge 92+, Firefox 90+, Safari 15.4+. This tells Next.js/SWC not to emit polyfills for `Array.prototype.at`, `.flat`, `.flatMap`, `Object.fromEntries`, saving ~14 KiB of unnecessary JavaScript.
+**Производительность** — `browserslist` в `package.json` нацелен на Chrome/Edge 92+, Firefox 90+, Safari 15.4+. Это указывает Next.js/SWC не генерировать полифиллы для `Array.prototype.at`, `.flat`, `.flatMap`, `Object.fromEntries`, экономя ~14 КиБ лишнего JavaScript.
