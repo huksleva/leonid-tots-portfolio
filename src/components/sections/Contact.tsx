@@ -32,10 +32,12 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<Status>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
+    setErrorMsg("");
 
     try {
       const res = await fetch("/api/contact", {
@@ -44,7 +46,12 @@ export default function Contact() {
         body: JSON.stringify({ name, email, message, website: "" }),
       });
 
-      if (!res.ok) throw new Error();
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setErrorMsg(data.error ?? "");
+        setStatus("error");
+        return;
+      }
 
       setStatus("success");
       setName("");
@@ -184,7 +191,7 @@ export default function Contact() {
               )}
               {status === "error" && (
                 <p role="alert" className="text-sm text-red-500 dark:text-red-400">
-                  {c.formError}
+                  {c.formError}{errorMsg ? ` (${errorMsg})` : ""}
                 </p>
               )}
             </div>
