@@ -30,7 +30,7 @@ const projects: Project[] = [
   {
     name: "Epidemic Spread Simulation",
     descKey: "d2",
-    tags: ["Python", "NumPy", "Matplotlib", "Simulation"],
+    tags: ["Python", "NumPy", "Matplotlib"],
     github: "https://github.com/huksleva/Coursework_computer_simulation",
     media: "/projects/epidemic.gif",
   },
@@ -56,7 +56,7 @@ const projects: Project[] = [
   {
     name: "Fractal Simulator",
     descKey: "d6",
-    tags: ["Python", "Simulation", "Visualization"],
+    tags: ["Python"],
     github: "https://github.com/huksleva/Fractals",
     media: "/projects/fractals.png",
   },
