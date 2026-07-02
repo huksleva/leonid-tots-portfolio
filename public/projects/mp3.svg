@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="470" viewBox="0 0 760 470" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">
+  <rect width="760" height="470" rx="10" fill="#0d1117"/>
+
+  <!-- title bar -->
+  <rect width="760" height="36" rx="10" fill="#161b22"/>
+  <rect width="760" height="10" y="26" fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="42" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="62" cy="18" r="6" fill="#27c93f"/>
+  <text x="380" y="23" text-anchor="middle" fill="#8b949e" font-size="13">mp3tag &#8212; song.mp3</text>
+
+  <text x="20" y="66" font-size="14" xml:space="preserve"><tspan fill="#7ee787">$ </tspan><tspan fill="#c9d1d9">mp3tag --filepath=song.mp3 --show</tspan>
+    <tspan x="20" dy="24" fill="#79c0ff">Frame: TIT2</tspan>
+    <tspan x="20" dy="20"><tspan fill="#8b949e">Value: </tspan><tspan fill="#c9d1d9">Bohemian Rhapsody</tspan></tspan>
+    <tspan x="20" dy="32" fill="#79c0ff">Frame: TPE1</tspan>
+    <tspan x="20" dy="20"><tspan fill="#8b949e">Value: </tspan><tspan fill="#c9d1d9">Queen</tspan></tspan>
+    <tspan x="20" dy="32" fill="#79c0ff">Frame: TALB</tspan>
+    <tspan x="20" dy="20"><tspan fill="#8b949e">Value: </tspan><tspan fill="#c9d1d9">A Night at the Opera</tspan></tspan>
+
+    <tspan x="20" dy="40"><tspan fill="#7ee787">$ </tspan><tspan fill="#c9d1d9">mp3tag --filepath=song.mp3 --get=TPE1</tspan></tspan>
+    <tspan x="20" dy="22"><tspan fill="#79c0ff">TPE1</tspan><tspan fill="#8b949e">: </tspan><tspan fill="#c9d1d9">Queen</tspan></tspan>
+
+    <tspan x="20" dy="36"><tspan fill="#7ee787">$ </tspan><tspan fill="#c9d1d9">mp3tag --filepath=song.mp3 --set=TIT2 --value="</tspan><tspan fill="#a5d6ff">Bohemian Rhapsody (Remastered)</tspan><tspan fill="#c9d1d9">"</tspan></tspan>
+
+    <tspan x="20" dy="34"><tspan fill="#7ee787">$ </tspan><tspan fill="#c9d1d9">mp3tag --filepath=song.mp3 --get=TIT2</tspan></tspan>
+    <tspan x="20" dy="22"><tspan fill="#79c0ff">TIT2</tspan><tspan fill="#8b949e">: </tspan><tspan fill="#c9d1d9">Bohemian Rhapsody (Remastered)</tspan></tspan>
+  </text>
+</svg>

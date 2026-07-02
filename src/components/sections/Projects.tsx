@@ -46,6 +46,7 @@ const projects: Project[] = [
     descKey: "d4",
     tags: ["C", "CMake", "ID3v2"],
     github: "https://github.com/huksleva/C_mp3",
+    media: "/projects/mp3.svg",
   },
   {
     name: "Computational Mathematics",
