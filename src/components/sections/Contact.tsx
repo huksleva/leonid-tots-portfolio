@@ -192,7 +192,7 @@ export default function Contact() {
               )}
               {status === "error" && (
                 <p role="alert" className="text-sm text-red-500 dark:text-red-400">
-                  {c.formError}{errorMsg ? ` (${errorMsg})` : ""}
+                  {c.formError}
                 </p>
               )}
             </div>
