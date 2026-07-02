@@ -220,8 +220,8 @@ export default function Projects() {
                 }}
                 className="shimmer-card card-glow cursor-pointer rounded-xl border border-zinc-200 bg-zinc-50/80 p-6 transition-colors hover:border-zinc-300 dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:border-zinc-700"
               >
-                <div className="mb-3 flex items-start justify-between gap-4">
-                  <div className="flex items-center gap-3">
+                <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                     <h3 translate="no" className="font-semibold text-zinc-900 dark:text-zinc-100">
                       {project.name}
                     </h3>
@@ -231,7 +231,7 @@ export default function Projects() {
                       </span>
                     )}
                   </div>
-                  <div className="relative z-10 flex shrink-0 gap-2">
+                  <div className="relative z-10 flex shrink-0 flex-wrap gap-2">
                     {project.siteUrl && (
                       <a
                         href={project.siteUrl}
