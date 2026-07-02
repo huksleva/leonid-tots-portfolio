@@ -57,7 +57,8 @@ export default function Contact() {
       setName("");
       setEmail("");
       setMessage("");
-    } catch {
+    } catch (err) {
+      setErrorMsg(err instanceof Error ? err.message : "Network error");
       setStatus("error");
     }
   };
