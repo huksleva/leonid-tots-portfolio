@@ -55,6 +55,16 @@ export const t = {
     contact: {
       title: "Contact",
       description: "Open to junior positions and internships. Feel free to reach out.",
+      formName: "Name",
+      formEmail: "Email",
+      formMessage: "Message",
+      formNamePlaceholder: "John Doe",
+      formEmailPlaceholder: "john@example.com",
+      formMessagePlaceholder: "Hello, I'd like to discuss...",
+      formSubmit: "Send",
+      formSubmitting: "Sending...",
+      formSuccess: "Message sent. I'll get back to you soon.",
+      formError: "Something went wrong. Try again or write directly.",
     },
   },
   ru: {
@@ -111,6 +121,16 @@ export const t = {
     contact: {
       title: "Контакт",
       description: "Открыт к предложениям о работе на позицию Junior. Пишите.",
+      formName: "Имя",
+      formEmail: "Email",
+      formMessage: "Сообщение",
+      formNamePlaceholder: "Иван Иванов",
+      formEmailPlaceholder: "ivan@example.com",
+      formMessagePlaceholder: "Здравствуйте, хочу обсудить...",
+      formSubmit: "Отправить",
+      formSubmitting: "Отправка...",
+      formSuccess: "Сообщение отправлено. Отвечу в ближайшее время.",
+      formError: "Что-то пошло не так. Попробуйте ещё раз или напишите напрямую.",
     },
   },
 } as const;
