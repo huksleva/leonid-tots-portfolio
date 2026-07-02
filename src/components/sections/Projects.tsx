@@ -12,6 +12,7 @@ type Project = {
   github: string;
   featured?: boolean;
   media?: string;
+  imagePosition?: string;
   newsUrl?: string;
   siteUrl?: string;
 };
@@ -54,6 +55,7 @@ const projects: Project[] = [
     tags: ["C#", ".NET"],
     github: "https://github.com/huksleva/Computationalmathematics",
     media: "/projects/integrals.png",
+    imagePosition: "left center",
   },
   {
     name: "Fractal Simulator",
@@ -121,6 +123,7 @@ function ProjectModal({ project, desc, badge, noPreview, onClose }: ModalProps) 
                 fill
                 unoptimized
                 onLoad={() => setImgLoaded(true)}
+                style={{ objectPosition: project.imagePosition ?? "center" }}
                 className={`object-cover transition-opacity duration-300 ${imgLoaded ? "opacity-100" : "opacity-0"}`}
               />
             </>
