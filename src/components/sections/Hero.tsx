@@ -2,8 +2,13 @@
 
 import { useLang } from "@/contexts/LanguageContext";
 
+const CV_URLS: Record<"en" | "ru", string> = {
+  en: "/leonid-tots-software-developer-en.pdf",
+  ru: "/leonid-tots-software-developer.pdf",
+};
+
 export default function Hero() {
-  const { tr } = useLang();
+  const { tr, lang } = useLang();
 
   return (
     <section
@@ -51,11 +56,12 @@ export default function Hero() {
           {tr.hero.ctaSecondary}
         </a>
         <a
-          href="/cv.pdf"
-          download
+          href={CV_URLS[lang]}
+          target="_blank"
+          rel="noopener noreferrer"
           className="rounded-lg border border-zinc-300 px-5 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-500 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-500 dark:hover:text-zinc-100"
         >
-          ↓ {tr.hero.ctaCV}
+          ↗ {tr.hero.ctaCV}
         </a>
       </div>
     </section>
