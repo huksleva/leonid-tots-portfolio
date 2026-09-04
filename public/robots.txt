@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /lab/
+Disallow: /cover-letter/
+
+Sitemap: https://leonidtots.dev/sitemap.xml
