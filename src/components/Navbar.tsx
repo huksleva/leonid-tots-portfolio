@@ -69,6 +69,7 @@ export default function Navbar() {
         <a
           href="#hero"
           className="text-sm font-semibold text-zinc-900 hover:text-black dark:text-zinc-100 dark:hover:text-white"
+          suppressHydrationWarning
         >
           {tr.hero.name}
         </a>
@@ -81,6 +82,7 @@ export default function Navbar() {
                   <a
                     href={href}
                     aria-current={isActive ? "true" : undefined}
+                    suppressHydrationWarning
                     className={`text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:rounded ${
                       isActive
                         ? "text-zinc-900 dark:text-zinc-100"
@@ -109,6 +111,7 @@ export default function Navbar() {
             </button>
             <button
               onClick={toggle}
+              suppressHydrationWarning
               aria-label={lang === "en" ? "Switch to Russian" : "Switch to English"}
               className="rounded-md border border-zinc-300 px-2.5 py-1 text-xs font-mono text-zinc-500 transition-colors hover:border-zinc-400 hover:text-zinc-700 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-zinc-500 dark:hover:text-zinc-200"
             >

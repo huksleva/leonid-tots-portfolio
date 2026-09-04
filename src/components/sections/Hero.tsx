@@ -12,50 +12,59 @@ export default function Hero() {
 
   return (
     <section
+      suppressHydrationWarning
       id="hero"
       className="flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center px-6 text-center"
     >
       <p
+        suppressHydrationWarning
         className="mb-3 font-mono text-sm tracking-widest text-zinc-500 dark:text-zinc-400 uppercase"
         style={{ animation: "fadeIn 0.6s ease both" }}
       >
         {tr.hero.greeting}
       </p>
       <h1
+        suppressHydrationWarning
         className="mb-4 text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-6xl"
         style={{ animation: "fadeUp 0.6s ease 0.15s both" }}
       >
         {tr.hero.name}
       </h1>
       <h2
+        suppressHydrationWarning
         className="mb-6 text-xl font-medium text-zinc-600 dark:text-zinc-400 sm:text-2xl"
         style={{ animation: "fadeUp 0.6s ease 0.3s both" }}
       >
         {tr.hero.role}
       </h2>
       <p
+        suppressHydrationWarning
         className="max-w-xl text-base leading-relaxed text-zinc-500 dark:text-zinc-400"
         style={{ animation: "fadeUp 0.6s ease 0.45s both" }}
       >
         {tr.hero.description}
       </p>
       <div
+        suppressHydrationWarning
         className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center"
         style={{ animation: "fadeUp 0.6s ease 0.6s both" }}
       >
         <a
+          suppressHydrationWarning
           href="#projects"
           className="w-48 rounded-lg bg-zinc-900 px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white sm:w-auto"
         >
           {tr.hero.cta}
         </a>
         <a
+          suppressHydrationWarning
           href="#contacts"
           className="w-48 rounded-lg border border-zinc-300 px-5 py-2.5 text-center text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-500 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-500 dark:hover:text-zinc-100 sm:w-auto"
         >
           {tr.hero.ctaSecondary}
         </a>
         <a
+          suppressHydrationWarning
           href={CV_URLS[lang]}
           target="_blank"
           rel="noopener noreferrer"
