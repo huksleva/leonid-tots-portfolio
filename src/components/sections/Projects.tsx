@@ -118,7 +118,7 @@ function ProjectModal({ project, desc, badge, noPreview, onClose }: ModalProps) 
                 <div className="absolute inset-0 animate-pulse bg-zinc-200 dark:bg-zinc-700" />
               )}
               <Image
-                src={project.media}
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${project.media}`}
                 alt={project.name}
                 fill
                 unoptimized
