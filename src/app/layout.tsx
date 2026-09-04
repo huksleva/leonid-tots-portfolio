@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "Портфолио Тоц Леонида — разработчика ПО. Проекты на Python, FastAPI, PostgreSQL. Открыт к предложениям о работе и стажировке.",
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/leonid-tots-portfolio/favicon.ico', sizes: 'any' },
     ],
   },
   authors: [{ name: "Leonid Tots" }],

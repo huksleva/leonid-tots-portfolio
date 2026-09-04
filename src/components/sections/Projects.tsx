@@ -17,6 +17,8 @@ type Project = {
   siteUrl?: string;
 };
 
+const BASE_PATH = '/leonid-tots-portfolio';
+
 const projects: Project[] = [
   {
     name: "Tramplin — AI Career Platform",
@@ -118,7 +120,7 @@ function ProjectModal({ project, desc, badge, noPreview, onClose }: ModalProps) 
                 <div className="absolute inset-0 animate-pulse bg-zinc-200 dark:bg-zinc-700" />
               )}
               <Image
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${project.media}`}
+                src={`${BASE_PATH}${project.media}`}  // ← ИЗМЕНИ ЭТУ СТРОКУ
                 alt={project.name}
                 fill
                 unoptimized
