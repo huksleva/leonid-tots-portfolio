@@ -3,7 +3,6 @@ import Script from "next/script";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { ThemeProvider } from "@/contexts/ThemeContext";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // 👇 ЗАМЕНИЛИ ИМПОРТ ШРИФТОВ НА ЛОКАЛЬНЫЙ ПАКЕТ geist
 import { GeistSans } from "geist/font/sans";
@@ -20,6 +19,11 @@ export const metadata: Metadata = {
   title: "Тоц Леонид — Портфолио разработчика ПО | Leonid Tots",
   description:
     "Портфолио Тоц Леонида — разработчика ПО. Проекты на Python, FastAPI, PostgreSQL. Открыт к предложениям о работе и стажировке.",
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+  },
   authors: [{ name: "Leonid Tots" }],
   keywords: [
     "Тоц Леонид",
@@ -107,7 +111,6 @@ export default function RootLayout({
           Skip to main content
         </a>
         {children}
-        <SpeedInsights />
       </ThemeProvider>
     </LanguageProvider>
     </body>
