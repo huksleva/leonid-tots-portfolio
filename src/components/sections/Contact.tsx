@@ -32,23 +32,26 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<Status>("idle");
-  const [errorMsg, setErrorMsg] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
-    setErrorMsg("");
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://formspree.io/f/moeqlbrr", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message, website: "" }),
+        headers: {
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          _gotcha: "", // honeypot для защиты от спама
+        }),
       });
 
       if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        setErrorMsg(data.error ?? "");
         setStatus("error");
         return;
       }
@@ -57,8 +60,7 @@ export default function Contact() {
       setName("");
       setEmail("");
       setMessage("");
-    } catch (err) {
-      setErrorMsg(err instanceof Error ? err.message : "Network error");
+    } catch {
       setStatus("error");
     }
   };
@@ -111,7 +113,7 @@ export default function Contact() {
             {/* honeypot — hidden from humans, filled by bots */}
             <input
               type="text"
-              name="website"
+              name="_gotcha"
               aria-hidden="true"
               tabIndex={-1}
               className="absolute h-0 w-0 opacity-0"
