@@ -1,18 +1,16 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 
-// 👇 ЗАМЕНИЛИ ИМПОРТ ШРИФТОВ НА ЛОКАЛЬНЫЙ ПАКЕТ geist
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 
-// 👇 ЭТИ ПЕРЕМЕННЫЕ УЖЕ ГОТОВЫ, ИХ НЕ НУЖНО ВЫЗЫВАТЬ КАК ФУНКЦИИ
 const geistSans = GeistSans;
 const geistMono = GeistMono;
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://leonidtots.dev";
+// 👇 ИЗМЕНИЛИ: fallback теперь указывает на актуальный GitHub Pages
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://huksleva.github.io/leonid-tots-portfolio";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -24,6 +22,11 @@ export const metadata: Metadata = {
       { url: '/leonid-tots-portfolio/favicon.ico', sizes: 'any' },
     ],
   },
+  // 👇 РАСКОММЕНТИРУЙ И ВСТАВЬ СЮДА КОДЫ, КОГДА ПОЛУЧИШЬ ИХ В ВЕБМАСТЕРАХ (Шаг 4)
+  // other: {
+  //   'yandex-verification': 'код_из_яндекса',
+  //   'google-site-verification': 'код_из_google',
+  // },
   authors: [{ name: "Leonid Tots" }],
   keywords: [
     "Тоц Леонид",
