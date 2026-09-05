@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Портфолио Тоц Леонида — разработчика ПО. Проекты на Python, FastAPI, PostgreSQL. Открыт к предложениям о работе и стажировке.",
   icons: {
     icon: [
-      { url: '/leonid-tots-portfolio/favicon.ico', sizes: 'any' },
+      { url: '/favicon.ico', sizes: 'any' }, // ← Без basePath!
     ],
   },
   // 👇 РАСКОММЕНТИРУЙ И ВСТАВЬ СЮДА КОДЫ, КОГДА ПОЛУЧИШЬ ИХ В ВЕБМАСТЕРАХ (Шаг 4)

@@ -3,11 +3,10 @@
 import { useLang } from "@/contexts/LanguageContext";
 
 // Пути к локальным PDF-файлам (basePath добавится автоматически при сборке)
-const BASE_PATH = '/leonid-tots-portfolio';
 
 const CV_URLS: Record<"en" | "ru", string> = {
-  en: `${BASE_PATH}/cv/leonid-tots-en.pdf`,
-  ru: `${BASE_PATH}/cv/leonid-tots-ru.pdf`,
+  en: "/cv/leonid-tots-en.pdf",
+  ru: "/cv/leonid-tots-ru.pdf",
 };
 
 export default function Hero() {

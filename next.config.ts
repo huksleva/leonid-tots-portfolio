@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath: '/leonid-tots-portfolio', // ← Жёстко указываем!
+  basePath: '',
   images: {
     unoptimized: true,
   },
