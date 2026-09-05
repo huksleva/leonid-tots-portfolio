@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { useLang } from "@/contexts/LanguageContext";
 
@@ -22,51 +21,9 @@ const links = [
   },
 ];
 
-type Status = "idle" | "loading" | "success" | "error";
-
 export default function Contact() {
   const { tr } = useLang();
   const c = tr.contact;
-
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [status, setStatus] = useState<Status>("idle");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("loading");
-
-    try {
-      const res = await fetch("https://formspree.io/f/moeqlbrr", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          message,
-          _gotcha: "", // honeypot для защиты от спама
-        }),
-      });
-
-      if (!res.ok) {
-        setStatus("error");
-        return;
-      }
-
-      setStatus("success");
-      setName("");
-      setEmail("");
-      setMessage("");
-    } catch {
-      setStatus("error");
-    }
-  };
-
-  const inputClass =
-    "w-full rounded-lg border border-zinc-200 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 outline-none transition-colors focus:border-zinc-400 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100 dark:placeholder-zinc-600 dark:focus:border-zinc-600";
 
   return (
     <section id="contacts" className="px-6 py-24">
@@ -104,102 +61,10 @@ export default function Contact() {
           ))}
         </div>
 
-        {/* Contact form */}
-        <AnimateOnScroll delay={500}>
-          <form
-            onSubmit={handleSubmit}
-            className="mt-10 space-y-4 rounded-xl border border-zinc-200 bg-zinc-50/80 p-6 dark:border-zinc-800 dark:bg-zinc-900/50"
-          >
-            {/* honeypot — hidden from humans, filled by bots */}
-            <input
-              type="text"
-              name="_gotcha"
-              aria-hidden="true"
-              tabIndex={-1}
-              className="absolute h-0 w-0 opacity-0"
-              autoComplete="off"
-            />
-
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <div>
-                <label
-                  htmlFor="contact-name"
-                  className="mb-1.5 block text-xs text-zinc-500 dark:text-zinc-400"
-                >
-                  {c.formName}
-                </label>
-                <input
-                  id="contact-name"
-                  type="text"
-                  required
-                  maxLength={100}
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder={c.formNamePlaceholder}
-                  className={inputClass}
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="contact-email"
-                  className="mb-1.5 block text-xs text-zinc-500 dark:text-zinc-400"
-                >
-                  {c.formEmail}
-                </label>
-                <input
-                  id="contact-email"
-                  type="email"
-                  required
-                  maxLength={200}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder={c.formEmailPlaceholder}
-                  className={inputClass}
-                />
-              </div>
-            </div>
-
-            <div>
-              <label
-                htmlFor="contact-message"
-                className="mb-1.5 block text-xs text-zinc-500 dark:text-zinc-400"
-              >
-                {c.formMessage}
-              </label>
-              <textarea
-                id="contact-message"
-                required
-                rows={4}
-                maxLength={2000}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                placeholder={c.formMessagePlaceholder}
-                className={`${inputClass} resize-none`}
-              />
-            </div>
-
-            <div className="flex items-center justify-between gap-4">
-              <button
-                type="submit"
-                disabled={status === "loading" || status === "success"}
-                className="rounded-lg bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-700 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white"
-              >
-                {status === "loading" ? c.formSubmitting : c.formSubmit}
-              </button>
-
-              {status === "success" && (
-                <p role="status" className="text-sm text-emerald-600 dark:text-emerald-400">
-                  {c.formSuccess}
-                </p>
-              )}
-              {status === "error" && (
-                <p role="alert" className="text-sm text-red-500 dark:text-red-400">
-                  {c.formError}
-                </p>
-              )}
-            </div>
-          </form>
-        </AnimateOnScroll>
+        {/*
+          Форма временно отключена.
+          Можно будет вернуть позже, настроив надёжный сервис (например, Telegram-бот).
+        */}
       </div>
     </section>
   );
