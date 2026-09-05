@@ -2,9 +2,10 @@
 
 import { useLang } from "@/contexts/LanguageContext";
 
+// Пути к локальным PDF-файлам (basePath добавится автоматически при сборке)
 const CV_URLS: Record<"en" | "ru", string> = {
-  en: "https://rxresu.me/leonid005xc/leonid-tots-software-developer-en",
-  ru: "https://rxresu.me/leonid005xc/leonid-tots-software-developer",
+  en: "/cv/leonid-tots-en.pdf",
+  ru: "/cv/leonid-tots-ru.pdf",
 };
 
 export default function Hero() {
